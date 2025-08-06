@@ -1,0 +1,68 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://static.run/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="A collection of documents" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet" />
+    <title>Document Collection</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // File list data - organized by directory paths
+      window.fileListData = {"root":[{"Key":"img","extension":"directory","LastModified":"Tue Aug 05 2025","Size":0}],"img":[{"Key":"IMG_5129 2.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"about.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"contact.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"home.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"insight.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"logo.png","extension":"png","LastModified":"Tue Aug 05 2025","Size":0},{"Key":"services.jpg","extension":"jpg","LastModified":"Tue Aug 05 2025","Size":0}]};
+
+      // Current directory path
+      window.currentDirectory = "";
+
+      // Set initial file list to the root directory
+      window.fileList = window.fileListData["root"];
+    </script>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="container mx-auto px-4 py-8">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+        <h1 class="text-2xl font-semibold text-gray-800">
+          Document Collection
+        </h1>
+        <div class="relative w-full md:w-64">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search files..."
+            class="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent" />
+          <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div id="file-listing-container"></div>
+    </div>
+
+    <script src="https://cdn.static.run/assets/file-listing/script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team - Martyn Hopper & Partners</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #111;
+            color: #eee;
+            margin: 0;
+            line-height: 1.7;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .site-header {
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header-img {
+            width: 100%;
+            height: 350px;
+            display: block;
+            margin-bottom: 10px;
+            object-fit: contain;
+            object-position: center;
+            background: #111;
+        }
+        .page-title {
+            color: #ccc;
+            text-align: center;
+            margin: 10px 0 30px;
+            font-weight: normal;
+            font-size: 2.2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            color: #66ccff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #fff;
+            background: rgba(102, 204, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        nav ul li a.current {
+            color: #fff;
+            background: rgba(102, 204, 255, 0.2);
+        }
+        a {
+            color: #66ccff;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #fff;
+        }
+        .site-logo {
+            display: block;
+            max-width: 280px;
+            margin: 15px auto;
+        }
+        
+        /* Enhanced typography */
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #ddd;
+            margin: 2.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: #ccc;
+            margin: 2rem 0 1rem 0;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(102, 204, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #eee;
+        }
+        
+        /* Enhanced profile section */
+        .profile-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .credentials-section {
+            background: rgba(102, 204, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #66ccff;
+        }
+        /* COMPLETE REPLACEMENT CSS FOR LISTS - REMOVE ALL EXISTING UL/LI CSS AND USE ONLY THIS */
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '▸';
+            color: #66ccff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        
+        /* Professional highlight */
+        .experience-highlight {
+            background: rgba(102, 204, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            border-left: 3px solid #66ccff;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #66ccff, #4da6e6);
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 204, 255, 0.2);
+            margin: 0 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 204, 255, 0.3);
+            color: #000;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: #66ccff;
+            border: 2px solid #66ccff;
+        }
+        
+        .cta-button.secondary:hover {
+            background: #66ccff;
+            color: #000;
+        }
+        
+        /* Responsive improvements */
+        @media screen and (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            p {
+                font-size: 1.05rem;
+            }
+            
+            .profile-section, .credentials-section, .experience-highlight, .cta-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <img src="img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/team.html" class="current">Team</a></li>
+                    <li><a href="/insight.html">Insights</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <img src="img/IMG_5129.jpg" alt="Martyn Hopper" class="header-img" />
+    <h2 class="page-title">Team</h2>
+    
+    <main class="container">
+        <div class="profile-section">
+            <h2>Martyn Hopper – Founder & Managing Director</h2>
+            
+            <p>Martyn is one of the UK's most experienced and trusted regulatory advisers. He brings over 30 years of deep expertise in financial regulation, enforcement, and compliance — spanning public service, private practice, and strategic advisory work at the highest level.</p>
+            
+            <div class="experience-highlight">
+                <p>He began his legal career in the UK Government Legal Service, before spending a decade at the Financial Services Authority (FSA), where he played a central role in the development of enforcement policy and regulatory reform.</p>
+            </div>
+            
+            <p>He then spent more than 21 years as a partner at two of the world's leading law firms — Herbert Smith and Linklaters — both ranked in the top tier of the Legal 500 and Chambers & Partners directories. In both firms, Martyn advised on some of the most complex and sensitive regulatory matters in the UK and globally — including enforcement actions, market conduct, culture reviews, and strategic regulatory issues.</p>
+            
+            <p>Martyn has been consistently ranked as a top-tier practitioner by both Legal 500 and Chambers for his work in financial services regulatory matters.</p>
+            
+            <p>He founded Martyn Hopper & Partners to offer clients something different: independent, high-trust advice that combines legal rigour with strategic, operational, and reputational insight. He works with a trusted network of senior professionals to deliver tailored, multidisciplinary advice on the most challenging regulatory questions.</p>
+        </div>
+        
+        <div class="credentials-section">
+            <h3>Credentials</h3>
+            <ul>
+                <li>Over 30 years in financial regulation and enforcement</li>
+                <li>Former senior lawyer at the UK Financial Services Authority</li>
+                <li>Former Partner at Herbert Smith and Linklaters (21+ years)</li>
+                <li>Recognised top-tier practitioner in Legal 500 and Chambers</li>
+                <li>Trusted adviser to boards, senior executives, and regulators</li>
+                <li>Strong relationships with regulators and public institutions</li>
+            </ul>
+        </div>
+        
+        <div class="cta-section">
+            <p><strong>Ready to benefit from three decades of regulatory expertise?</strong></p>
+            <a href="/contact.html" class="cta-button">Get In Touch</a>
+            <a href="/services.html" class="cta-button secondary">Our Services</a>
+        </div>
+    </main>
+</body>
+</html>

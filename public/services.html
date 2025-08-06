@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services - Martyn Hopper & Partners</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #111;
+            color: #eee;
+            margin: 0;
+            line-height: 1.7;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .site-header {
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header-img {
+            width: 100%;
+            height: 320px;
+            display: block;
+            margin-bottom: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .page-title {
+            color: #ccc;
+            text-align: center;
+            margin: 10px 0 30px;
+            font-weight: normal;
+            font-size: 2.2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            color: #66ccff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #fff;
+            background: rgba(102, 204, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        nav ul li a.current {
+            color: #fff;
+            background: rgba(102, 204, 255, 0.2);
+        }
+        a {
+            color: #66ccff;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #fff;
+        }
+        .site-logo {
+            display: block;
+            max-width: 280px;
+            margin: 15px auto;
+        }
+        
+        /* Enhanced typography */
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #ddd;
+            margin: 2.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: #ccc;
+            margin: 2rem 0 1rem 0;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(102, 204, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #66ccff;
+            margin: 1.5rem 0 0.8rem 0;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #eee;
+        }
+        
+        /* Enhanced service sections */
+        .intro-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .who-we-help {
+            background: rgba(102, 204, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #66ccff;
+        }
+        
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            border-left: 3px solid #66ccff;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+        
+        /* COMPLETE REPLACEMENT CSS FOR LISTS - REMOVE ALL EXISTING UL/LI CSS AND USE ONLY THIS */
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '▸';
+            color: #66ccff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #66ccff, #4da6e6);
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 204, 255, 0.2);
+            margin: 0 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 204, 255, 0.3);
+            color: #000;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: #66ccff;
+            border: 2px solid #66ccff;
+        }
+        
+        .cta-button.secondary:hover {
+            background: #66ccff;
+            color: #000;
+        }
+        
+        /* Responsive improvements */
+        @media screen and (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            h4 {
+                font-size: 1.2rem;
+            }
+            
+            p {
+                font-size: 1.05rem;
+            }
+            
+            .intro-section, .who-we-help, .service-item, .cta-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <img src="img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html" class="current">Services</a></li>
+                    <li><a href="/team.html">Team</a></li>
+                    <li><a href="/insight.html">Insights</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <img src="img/services.jpg" alt="Services" class="header-img" />
+    <h2 class="page-title">What We Do</h2>
+    
+    <main class="container">
+        <div class="intro-section">
+            <p>We advise clients on regulatory strategy, compliance frameworks, governance, investigations, and the design of regulatory systems. Our work is grounded in legal expertise but always framed in the wider context of operational reality, reputational risk, and policy impact.</p>
+            
+            <p>We don't apply templated solutions. We work closely with each client to understand their unique challenges and develop tailored strategies that deliver clarity, resilience, and credibility.</p>
+        </div>
+        
+        <div class="who-we-help">
+            <h3>Who We Help</h3>
+            <p>We work with:</p>
+            <ul>
+                <li>Financial institutions</li>
+                <li>Corporates in regulated sectors</li>
+                <li>Start-ups navigating authorisation and growth</li>
+                <li>Regulators and public bodies designing or reforming systems</li>
+                <li>Individual senior executives facing regulatory scrutiny or transition</li>
+            </ul>
+        </div>
+        
+        <h3>Our Services Include:</h3>
+        
+        <div class="service-item">
+            <h4>Regulatory Strategy</h4>
+            <p>Helping clients understand, influence, and adapt to regulatory developments. We advise on long-term positioning, engagement with regulators, and aligning commercial goals with regulatory expectations.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Compliance Frameworks</h4>
+            <p>Designing and evaluating systems of control, reporting, and oversight — from risk assessments to culture audits. We focus on proportionality, accountability, and effectiveness, not just box-ticking.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Regulatory Investigations</h4>
+            <p>Guiding firms and individuals through regulatory inquiries, enforcement processes, and high-stakes reviews. Our approach combines legal rigour with strategic thinking and operational realism.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Governance and Culture</h4>
+            <p>Advising boards and senior management on issues of tone, delegation, accountability, and decision-making. We help organisations build credible, transparent, and sustainable governance.</p>
+        </div>
+        
+        <div class="service-item">
+            <h4>Policy and System Design</h4>
+            <p>Supporting regulators and governmental bodies on the structure, goals, and enforcement of regulatory frameworks. Our work combines field-tested experience with leading academic thinking.</p>
+        </div>
+
+        <div class="service-item">
+            <h4>Research, Education and Training</h4>
+            <p>We design and deliver bespoke education and training programmes that build regulatory and compliance capabilities within organisations. Our offerings include senior manager development on regulatory accountability, board-level education on emerging regulatory themes, compliance team training on risk assessment and culture, and industry workshops on regulatory reform and best practice.</p>
+    
+            <p>We also conduct independent research on regulatory systems and compliance culture, contributing to policy debates and industry understanding through evidence-based analysis and practical insights. Whether you need to upskill your team, enhance board understanding, or contribute to industry knowledge, our services combine deep expertise with practical application.</p>
+        </div>
+        
+        <div class="cta-section">
+            <p><strong>Ready to discuss your specific regulatory challenges?</strong></p>
+            <a href="/contact.html" class="cta-button">Get In Touch</a>
+            <a href="/about.html" class="cta-button secondary">Learn About Our Approach</a>
+        </div>
+    </main>
+</body>
+</html>

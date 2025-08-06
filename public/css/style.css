@@ -1,0 +1,108 @@
+/* TEST - ADD THIS TO THE VERY TOP OF YOUR style.css FILE */
+body { 
+    background: red !important; 
+    border: 10px solid yellow !important;
+}
+/* END TEST */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #111;
+    color: #eee;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.site-header {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+img.header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+h2.page-title {
+    color: #ccc;
+    text-align: center;
+    margin: 10px 0 30px;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #66ccff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+a {
+    color: #66ccff;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.site-logo {
+    display: block;
+    max-width: 320px;
+    margin: 20px auto;
+}
+
+/* RESPONSIVE IMAGE SIZING FOR IPAD AND DESKTOP */
+/* Mobile devices - keep auto height but limit max */
+@media screen and (max-width: 767px) {
+    img.header-img {
+        height: auto;
+        max-height: 200px;
+    }
+}
+
+/* Tablet sizing (iPad and similar) - THIS FIXES YOUR IPAD ISSUE */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    img.header-img {
+        height: 250px;
+        max-height: 250px;
+    }
+}
+
+/* Desktop sizing */
+@media screen and (min-width: 1025px) and (max-width: 1399px) {
+    img.header-img {
+        height: 300px;
+        max-height: 300px;
+    }
+}
+
+/* Large desktop sizing */
+@media screen and (min-width: 1400px) {
+    img.header-img {
+        height: 350px;
+        max-height: 350px;
+    }
+}

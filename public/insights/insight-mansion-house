@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulation for growth — what’s missing from the Mansion House and Leeds reforms?</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Why deregulation alone won’t deliver growth — and how smarter regulation can provide certainty, channel investment, and support competitiveness.">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header>
+    <div class="container">
+      <h1 class="site-title"><a href="index.html">Martyn Hopper & Partners</a></h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="insights.html" class="active">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <article class="insight-post">
+      <h2>Regulation for growth — what’s missing from the Mansion House and Leeds reforms?</h2>
+      <p class="post-meta">Posted on September 28, 2025</p>
+
+      <p>After leaving big law earlier this year, I gave myself something I hadn’t had for a very long time — time.</p>
+
+      <p>A summer spent travelling, partying, and, perhaps surprisingly, doing quite a lot of reading on law, regulation and economics.</p>
+
+      <p>Stepping back from day-to-day practice has given me the space to think more deeply about the bigger picture. And I’m returning to the debate at a moment when the UK government has placed big hopes on regulatory reform as a lever for growth.</p>
+
+      <p>The Mansion House and Leeds reforms were meant to show ambition — unlocking capital, driving competitiveness, and strengthening the UK’s role as a financial centre.</p>
+
+      <p>But if we are honest, most of what’s been proposed so far is modest. Helpful in parts, yes. Transformational, no.</p>
+
+      <p>And the debate has often been framed too simplistically: as if <em>deregulation</em> alone could deliver growth. That argument has been with us since the 1980s, and it misses the point. Simply stripping away protections or watering down standards doesn’t create productive investment. In fact, it can undermine trust, increase the cost of capital, and drive activity into unproductive rent-seeking.</p>
+
+      <p>The real question is <strong>how regulation can be designed to support growth</strong>. That means regulation which:</p>
+      <ul>
+        <li>Provides <strong>certainty and predictability</strong> so capital can be deployed with confidence.</li>
+        <li>Actively <strong>channels investment into productive areas</strong> — innovation, infrastructure, sustainable business models — rather than rewarding arbitrage or financial engineering.</li>
+        <li>Creates <strong>fair competition</strong> so new entrants and challengers can innovate, while consumers and markets are protected by clear guardrails.</li>
+      </ul>
+
+      <p>One of the UK’s challenges is that many of our most important regulatory standards — from the Principles to the Consumer Duty — are deliberately open-textured. Flexibility has its uses, but it also generates unpredictability. Unless we build stronger processes for how rules are interpreted and applied, “reform” risks becoming a cycle of slogans rather than the framework for long-term investment.</p>
+
+      <p>Over the coming months I’ll be posting more regularly about where reform could make a real difference — and where it risks missing the point.</p>
+
+      <p>Next week, I’ll look at one live example: the Treasury’s consultation on FOS reform. It’s one of the few proposals that really <em>could</em> move the dial — but only if the process and rule-of-law questions are confronted head-on.</p>
+
+      <h3>Three thoughts to anchor the debate:</h3>
+      <ul>
+        <li><strong>De-regulation alone won’t deliver growth.</strong> The UK needs smarter regulation, not just less of it.</li>
+        <li><strong>Growth requires certainty as well as capital.</strong> Rules must be predictable if they are to attract long-term investment.</li>
+        <li><strong>The rule of law is a growth strategy.</strong> A system rooted in fair, transparent, and accountable processes is not a luxury — it’s the foundation for competitiveness.</li>
+      </ul>
+
+      <p>I’m looking forward to re-engaging in this debate and hearing views from across the market.</p>
+
+      <div class="post-tags">
+        <span>#Regulation</span>
+        <span>#Growth</span>
+        <span>#FinancialServices</span>
+        <span>#MansionHouseReforms</span>
+        <span>#LeedsReforms</span>
+        <span>#RuleOfLaw</span>
+        <span>#Competitiveness</span>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Martyn Hopper & Partners. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

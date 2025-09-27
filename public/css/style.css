@@ -138,3 +138,52 @@ a:hover {
 
 .post-tags { margin-top: 30px; font-size: 0.85em; color: #555; }
 .post-tags span { display: inline-block; margin-right: 10px; color: #005f73; }
+/* Shared meta styling (author bold on first line, date smaller beneath) */
+.article-meta,
+.byline {
+  margin-top: 10px;
+  line-height: 1.35;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.article-author,
+.byline .author {
+  display: block;
+  font-weight: 700;           /* bold */
+  font-size: 1rem;            /* base size */
+  color: #eee;                /* works on dark theme */
+}
+
+.article-date,
+.byline .date {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;         /* smaller */
+  color: #aaa;                /* lighter tone */
+}
+
+/* Optional: tidy summary cards on dark theme */
+.insight-card {
+  background: #121212;
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+
+.insight-card .article-title {
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.insight-card .article-summary {
+  margin: 8px 0 10px 0;
+  color: #cfcfcf;
+}
+
+/* Small screens: tighten spacing slightly */
+@media (max-width: 600px) {
+  .insight-card { padding: 14px 16px; }
+  .insight-card .article-title { font-size: 1.05rem; }
+}

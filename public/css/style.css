@@ -1,10 +1,3 @@
-/* TEST - ADD THIS TO THE VERY TOP OF YOUR style.css FILE */
-body { 
-    background: red !important; 
-    border: 10px solid yellow !important;
-}
-/* END TEST */
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #111;
@@ -284,4 +277,3 @@ a:hover {
   .legal-page h1 { font-size: 1.6rem; }
   .legal-page h2 { font-size: 1.05rem; }
 }
-</style>

@@ -297,3 +297,20 @@ a:hover {
   .legal-page h1 { font-size: 1.6rem; }
   .legal-page h2 { font-size: 1.05rem; }
 }
+<style>
+  /* Bulletproof override for footer text size */
+  footer.site-footer,
+  footer.site-footer .footer-legal,
+  footer.site-footer .footer-legal p,
+  footer.site-footer .footer-legal a,
+  footer.site-footer small {
+    font-size: 0.72rem !important;   /* ~11.5px on a 16px root */
+    line-height: 1.35 !important;
+  }
+
+  /* Optional: make separators subtler */
+  footer.site-footer .separator { opacity: 0.6; }
+
+  /* iOS sometimes bumps small text */
+  html { -webkit-text-size-adjust: 100%; }
+</style>

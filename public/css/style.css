@@ -194,9 +194,9 @@ a:hover {
   background: #000;
   color: #aaa;
   border-top: 1px solid #222;
-  padding: 24px 0 28px;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  padding: 20px 0 24px;
+  font-size: 0.75rem;          /* Reduced from 0.85rem */
+  line-height: 1.4;            /* Slightly tighter */
 }
 
 /* Ensure alignment with your existing .container */

@@ -187,3 +187,107 @@ a:hover {
   .insight-card { padding: 14px 16px; }
   .insight-card .article-title { font-size: 1.05rem; }
 }
+/* === Small Print & Legal Pages (Martyn Hopper & Partners) === */
+
+/* Footer container */
+.site-footer {
+  background: #000;
+  color: #aaa;
+  border-top: 1px solid #222;
+  padding: 24px 0 28px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Ensure alignment with your existing .container */
+.site-footer .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Footer links */
+.site-footer a {
+  color: #bbb;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(187, 187, 187, 0.3);
+}
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #eee;
+  border-bottom-color: rgba(238, 238, 238, 0.7);
+}
+
+/* Make the legal lines subtle and well spaced */
+.footer-legal p {
+  margin: 0.4rem 0;
+}
+
+/* Inline list for footer links */
+.legal-links {
+  margin-top: 0.4rem;
+}
+.legal-links a + span.separator {
+  margin: 0 0.5rem;
+  color: #555;
+}
+
+/* Legal pages */
+.legal-page {
+  background: #111;
+  color: #eee;
+  padding: 24px 0 60px;
+}
+
+.legal-page .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Headings match house style: restrained, lighter colour */
+.legal-page h1 {
+  color: #ccc;
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+.legal-page h2 {
+  color: #ccc;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 2rem 0 0.6rem;
+}
+
+/* Body text */
+.legal-page p,
+.legal-page li {
+  color: #ddd;
+}
+
+/* Lists spacing */
+.legal-page ul {
+  margin: 0.6rem 0 1rem 1.1rem;
+}
+
+/* Muted 'Last updated' */
+.legal-updated {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+/* Inline one-liner disclaimer (for Insight posts) */
+.disclaimer-inline {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.6rem 0 1.2rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .site-footer { font-size: 0.9rem; }
+  .legal-page h1 { font-size: 1.6rem; }
+  .legal-page h2 { font-size: 1.05rem; }
+}

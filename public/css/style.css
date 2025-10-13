@@ -195,8 +195,14 @@ a:hover {
   color: #aaa;
   border-top: 1px solid #222;
   padding: 20px 0 24px;
-  font-size: 0.75rem;          /* Reduced from 0.85rem */
-  line-height: 1.4;            /* Slightly tighter */
+  font-size: 0.55rem;          /* Reduced from 0.85rem */
+  line-height: 1.2;            /* Slightly tighter */
+.site-footer {
+  opacity: 0.85;               /* Makes footer blend into dark theme */
+}
+.site-footer:hover {
+  opacity: 1;                  /* Full opacity on hover for legibility */
+}
 }
 
 /* Ensure alignment with your existing .container */

@@ -222,6 +222,9 @@ a:hover {
   margin: 0.3rem 0;
 }
 
+/* Keep nested elements from inflating the size */
+.site-footer * { font-size: inherit; }
+
 /* Inline list for footer links */
 .legal-links {
   margin-top: 0.3rem;

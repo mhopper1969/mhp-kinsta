@@ -1,10 +1,73 @@
-<main class="legal-page">
-  <div class="container">
-    <h1>Insight Disclaimer</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insight Disclaimer – Martyn Hopper & Partners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #111; color: #eee; margin: 0; line-height: 1.7; }
+    .container { width: 90%; max-width: 1000px; margin: auto; padding: 20px; }
+    .site-header { background: #000; color: #fff; padding: 10px 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0; margin: 0; }
+    nav ul li a { color: #66ccff; text-decoration: none; padding: 8px 16px; border-radius: 4px; transition: all 0.3s ease; }
+    nav ul li a:hover { color: #fff; background: rgba(102,204,255,0.1); transform: translateY(-1px); }
+    nav ul li a.current { color: #fff; background: rgba(102,204,255,0.2); }
+    a { color: #66ccff; transition: color 0.3s ease; } a:hover { color: #fff; }
+    .site-logo { display: block; max-width: 280px; margin: 15px auto; }
 
-    <p>Insights, articles and publications on this site are provided for general information only. They do not constitute legal, regulatory or other professional advice and should not be relied upon as such. Professional advice should be taken on your particular facts and circumstances.</p>
-    <p>Views expressed are those of the author at the date of publication and may not reflect subsequent developments. We do not accept responsibility or liability for loss arising from reliance on content published here or on third-party resources linked from it.</p>
+    .legal-page { background: #111; color: #eee; padding: 24px 0 60px; }
+    .legal-page h1 { color: #ccc; font-weight: 400; font-size: 2.0rem; margin: 0 0 1rem; }
+    .legal-page p, .legal-page li { color: #ddd; }
+    .legal-updated { color: #888; font-size: 0.85rem; margin-top: 1.2rem; }
 
-    <p class="legal-updated">Last updated: 13 October 2025.</p>
-  </div>
-</main>
+    .site-footer { background: #000; color: #aaa; border-top: 1px solid #222; padding: 20px 0 24px; font-size: 0.72rem; line-height: 1.35; opacity: 0.85; }
+    .site-footer:hover { opacity: 1; }
+    .site-footer .legal-links { margin-top: 0.3rem; }
+    .site-footer a { color: #bbb; text-decoration: none; border-bottom: 1px dotted rgba(187,187,187,0.3); }
+    .site-footer a:hover { color: #eee; border-bottom-color: rgba(238,238,238,0.7); }
+    .separator { color: #555; margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/index.html"><img src="img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"></a>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/insight.html">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container">
+      <h1>Insight Disclaimer</h1>
+      <p>Insights, articles and publications on this site are provided for general information only. They do not constitute legal, regulatory or other professional advice and should not be relied upon as such. Professional advice should be taken on your particular facts and circumstances.</p>
+      <p>Views expressed are those of the author at the date of publication and may not reflect subsequent developments. We do not accept responsibility or liability for loss arising from reliance on content published here or on third-party resources linked from it.</p>
+      <p class="legal-updated">Last updated: 14 October 2025.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a><span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a><span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>(function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();</script>
+</body>
+</html>

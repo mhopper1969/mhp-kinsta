@@ -80,6 +80,34 @@
       p { font-size: 1.05rem; }
       .intro-section, .topics-section, .coming-soon, .newsletter-signup, .cta-section { padding: 1.5rem; }
     }
+
+    /* -----------------------------
+       Footer (house spec, 0.72rem)
+    ------------------------------*/
+    footer.site-footer {
+      background: #000;
+      color: #aaa;
+      border-top: 1px solid #222;
+      padding: 20px 0 24px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      opacity: 0.85;
+    }
+    footer.site-footer:hover { opacity: 1; }
+    footer.site-footer .footer-legal p { margin: 0.3rem 0; }
+    footer.site-footer .legal-links { margin-top: 0.3rem; }
+    footer.site-footer .separator { color: #555; margin: 0 0.5rem; }
+    footer.site-footer a {
+      color: #bbb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(187,187,187,0.3);
+    }
+    footer.site-footer a:hover {
+      color: #eee;
+      border-bottom-color: rgba(238,238,238,0.7);
+    }
+    footer.site-footer * { font-size: inherit; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   </style>
 </head>
 <body>
@@ -105,7 +133,7 @@
   <main class="container">
     <div class="intro-section">
       <p>Ideas at the edge of regulation, policy and practice — short, sharp and occasionally provocative.</p>
-<p>Written to clarify, not to market.</p>
+      <p>Written to clarify, not to market.</p>
     </div>
 
     <div class="newsletter-signup">
@@ -145,5 +173,26 @@
       <a href="/contact.html" class="cta-button">Get In Touch</a>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+          <span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a>
+          <span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
 </body>
 </html>

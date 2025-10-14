@@ -120,8 +120,6 @@
             padding-left: 1rem;
             position: relative;
         }
-
-     
         
         ul li strong {
             color: #66ccff;
@@ -204,24 +202,58 @@
             .values-section, .differentiators-section, .cta-section {
                 padding: 1.5rem;
             }
-/* TARGETED FIX FOR YOUR SPECIFIC HTML STRUCTURE */
+            /* TARGETED FIX FOR YOUR SPECIFIC HTML STRUCTURE */
 
-/* Remove ALL list styling first */
-ul, ul li {
-    list-style: none !important;
-    list-style-type: none !important;
-    list-style-image: none !important;
-    list-style-position: outside !important;
-}
+            /* Remove ALL list styling first */
+            ul, ul li {
+                list-style: none !important;
+                list-style-type: none !important;
+                list-style-image: none !important;
+                list-style-position: outside !important;
+            }
 
-/* Override any existing li styling */
-li {
-    list-style: none !important;
-    list-style-type: none !important;
-}
+            /* Override any existing li styling */
+            li {
+                list-style: none !important;
+                list-style-type: none !important;
+            }
 
-/* Your blue arrows should be handled by existing ::before CSS */
+            /* Your blue arrows should be handled by existing ::before CSS */
         }
+
+        /* -----------------------------
+           Footer (house spec, 0.72rem)
+        ------------------------------*/
+        footer.site-footer {
+          background: #000;
+          color: #aaa;
+          border-top: 1px solid #222;
+          padding: 20px 0 24px;
+          font-size: 0.72rem;   /* lock size */
+          line-height: 1.35;    /* tidy spacing */
+          opacity: 0.85;
+        }
+        footer.site-footer:hover { opacity: 1; }
+
+        footer.site-footer .footer-legal p { margin: 0.3rem 0; }
+        footer.site-footer .legal-links { margin-top: 0.3rem; }
+        footer.site-footer .separator { color: #555; margin: 0 0.5rem; }
+
+        footer.site-footer a {
+          color: #bbb;
+          text-decoration: none;
+          border-bottom: 1px dotted rgba(187,187,187,0.3);
+        }
+        footer.site-footer a:hover {
+          color: #eee;
+          border-bottom-color: rgba(238,238,238,0.7);
+        }
+
+        /* Prevent nested elements from inflating size */
+        footer.site-footer * { font-size: inherit; }
+
+        /* Prevent iOS text autosize from bumping small text */
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     </style>
 </head>
 <body>
@@ -246,14 +278,35 @@ li {
     
     <main class="container">
         <p>A small, senior advisory built for complex, regulated environments.</p>
-<p>Legal judgement, regulatory insight and policy sense — joined up, not siloed.</p>
-<p>Independent in ownership and outlook. Focused on clarity, integrity and lasting impact.</p>
-<p><a href="/services.html">What we do</a></p>
+        <p>Legal judgement, regulatory insight and policy sense — joined up, not siloed.</p>
+        <p>Independent in ownership and outlook. Focused on clarity, integrity and lasting impact.</p>
+        <p><a href="/services.html">What we do</a></p>
         <div class="cta-section">
             <a href="/insight.html" class="cta-button">Our Insights</a>
             <a href="/team.html" class="cta-button secondary">Our Team</a>
             <a href="/contact.html" class="cta-button">Get In Touch</a>
         </div>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-legal">
+          <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+          <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+          <p>Professional indemnity insurance is maintained; details available on request.</p>
+          <p class="legal-links">
+            <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+            <span class="separator">·</span>
+            <a href="/privacy.html">Privacy Notice</a>
+            <span class="separator">·</span>
+            <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+    </script>
 </body>
 </html>

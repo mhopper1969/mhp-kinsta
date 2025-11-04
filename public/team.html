@@ -316,6 +316,138 @@
             <a href="/contact.html" class="cta-button">Get In Touch</a>
         </div>
     </main>
+<!-- Consulting Partner Panel (insert below Martyn's bio block) -->
+<section id="consulting-partner-panel" aria-labelledby="cpp-title" class="cpp">
+  <div class="cpp__inner">
+    <header class="cpp__header">
+      <h2 id="cpp-title" class="cpp__title">Consulting Partner Panel</h2>
+      <p class="cpp__lede">A multidisciplinary network of senior experts who work with us on a project‑by‑project basis.</p>
+    </header>
+
+    <!-- Grid -->
+    <ul class="cpp__grid" role="list">
+      <!-- CARD TEMPLATE: duplicate <li> for each partner -->
+      <li class="cpp__item">
+        <a class="cpp__card" href="/profiles/sally-dewar.html" aria-label="Read Sally Dewar’s full bio">
+          <figure class="cpp__media">
+            <picture>
+              <!-- Replace srcset with exported, approved assets; keep square crop -->
+              <source srcset="/assets/team/partners/sally-dewar@1x.webp 1x, /assets/team/partners/sally-dewar@2x.webp 2x" type="image/webp" />
+              <img loading="lazy" decoding="async" width="640" height="640"
+                   src="/assets/team/partners/sally-dewar@1x.jpg"
+                   srcset="/assets/team/partners/sally-dewar@1x.jpg 1x, /assets/team/partners/sally-dewar@2x.jpg 2x"
+                   alt="Headshot of Sally Dewar" class="cpp__img" />
+            </picture>
+          </figure>
+          <div class="cpp__body">
+            <h3 class="cpp__name">Sally Dewar</h3>
+            <p class="cpp__oneLiner">Former regulator and member of JPMorgan's EMEA Senior Leadership Team. Established A&O Shearman's 40 strong global regulatory consulting practice.  Specialises in advising Board and c-suite executives on governance, culture, risk management and their alignment to successful business outcomes.</p>
+          </div>
+          <span class="cpp__cta" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg"><path d="M7 12h10M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      <li class="cpp__item">
+        <a class="cpp__card" href="/profiles/stephen-sanders.html" aria-label="Read Stephen Sander’s full bio">
+          <figure class="cpp__media">
+            <picture>
+              <source srcset="/assets/team/partners/stephen-sander@1x.webp 1x, /assets/team/partners/stephen-sanders@2x.webp 2x" type="image/webp" />
+              <img loading="lazy" decoding="async" width="640" height="640"
+                   src="/assets/team/partners/stephen-sanders@1x.jpg"
+                   srcset="/assets/team/partners/stephen-sanders@1x.jpg 1x, /assets/team/partners/stephen-sanders@2x.jpg 2x"
+                   alt="Headshot of Stephen Sanders" class="cpp__img" />
+            </picture>
+          </figure>
+          <div class="cpp__body">
+            <h3 class="cpp__name">Stephen Sanders</h3>
+            <p class="cpp__oneLiner">more than forty years’ experience in financial services as regulator, risk manager, compliance officer and senior executive. He was Chief Compliance Officer for EMEA at JP Morgan Chase and has held senior roles with the London Stock Exchange, Deutsche Bank and RBS. He is a Visiting Professor at Kingston Business School and advises firms in the fintech and risktech sectors.</p>
+          </div>
+          <span class="cpp__cta" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg"><path d="M7 12h10M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </li>
+
+      
+      <!-- Add more partner cards as needed -->
+    </ul>
+  </div>
+</section>
+
+<!-- Scoped styles (append to your Team page stylesheet) -->
+<style>
+  :root {
+    /* Re‑use your existing palette if already defined */
+    --mhp-bg: #0b0c0e;          /* near‑black */
+    --mhp-panel: #101215;       /* card background */
+    --mhp-text: #e8e9ea;        /* high‑contrast text */
+    --mhp-muted: #9aa0a6;       /* secondary text */
+    --mhp-line: #1c1f24;        /* hairline */
+    --mhp-accent: #b08d57;      /* warm neutral (subtle brass/amber) */
+  }
+
+  .cpp { background: var(--mhp-bg); padding: clamp(2rem, 3vw, 3.5rem) 0; border-top: 1px solid var(--mhp-line); }
+  .cpp__inner { width: min(1200px, 92vw); margin-inline: auto; }
+  .cpp__header { margin-bottom: 1.25rem; }
+  .cpp__title { color: var(--mhp-text); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(1.25rem, 2vw, 1.5rem); margin: 0; }
+  .cpp__lede { color: var(--mhp-muted); margin: 0.5rem 0 0; max-width: 60ch; }
+
+  .cpp__grid { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: clamp(0.75rem, 1.6vw, 1rem); grid-template-columns: repeat(12, 1fr); }
+  .cpp__item { grid-column: span 12; }
+
+  @media (min-width: 640px) { .cpp__item { grid-column: span 6; } }
+  @media (min-width: 960px) { .cpp__item { grid-column: span 4; } }
+
+  .cpp__card { position: relative; display: grid; grid-template-rows: auto auto; gap: 0; background: var(--mhp-panel); border: 1px solid var(--mhp-line); border-radius: 16px; overflow: hidden; text-decoration: none; transition: transform .25s ease, border-color .25s ease; }
+  .cpp__card:focus-visible { outline: 2px solid var(--mhp-accent); outline-offset: 2px; }
+  .cpp__card:hover { transform: translateY(-2px); border-color: color-mix(in oklab, var(--mhp-accent) 30%, var(--mhp-line)); }
+
+  .cpp__media { aspect-ratio: 1 / 1; margin: 0; background: #0a0a0a; display: grid; place-items: center; border-bottom: 1px solid var(--mhp-line); }
+  .cpp__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
+
+  .cpp__body { padding: 0.9rem 1rem 1rem; }
+  .cpp__name { color: var(--mhp-text); font-size: 1rem; font-weight: 600; margin: 0 0 0.25rem; letter-spacing: 0.01em; }
+  .cpp__oneLiner { color: var(--mhp-muted); font-size: 0.9375rem; line-height: 1.35; margin: 0; }
+
+  .cpp__cta { position: absolute; right: 10px; bottom: 10px; display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: transparent; border: 1px solid var(--mhp-line); transition: background .25s ease, border-color .25s ease, transform .25s ease; }
+  .cpp__icon { width: 18px; height: 18px; color: var(--mhp-muted); transition: color .25s ease; }
+  .cpp__card:hover .cpp__cta { background: color-mix(in oklab, var(--mhp-accent) 8%, transparent); border-color: color-mix(in oklab, var(--mhp-accent) 30%, var(--mhp-line)); transform: translateY(-1px); }
+  .cpp__card:hover .cpp__icon { color: var(--mhp-text); }
+
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce) { .cpp__card, .cpp__cta { transition: none; } }
+</style>
+
+<!-- Optional: JSON‑LD to help search engines understand the panel (update with real partner data) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Consulting Partner Panel",
+  "itemListElement": [
+    {
+      "@type": "Person",
+      "name": "Alex Ramirez",
+      "jobTitle": "Consulting Partner",
+      "url": "/team/partners/alex-ramirez.html"
+    },
+    {
+      "@type": "Person",
+      "name": "Safia Khan",
+      "jobTitle": "Consulting Partner",
+      "url": "/team/partners/safia-khan.html"
+    },
+    {
+      "@type": "Person",
+      "name": "James O’Neill",
+      "jobTitle": "Consulting Partner",
+      "url": "/team/partners/james-o-neill.html"
+    }
+  ]
+}
+</script>
 
     <!-- FOOTER -->
     <footer class="site-footer">

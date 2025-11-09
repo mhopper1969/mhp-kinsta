@@ -8,7 +8,7 @@
     .container { width:90%; max-width:1000px; margin:auto; padding:20px; }
     .site-header { background:#000; color:#fff; padding:10px 0; text-align:center; }
     .site-logo { display:block; max-width:280px; margin:15px auto; }
-    .header-img { width:100%; height:350px; display:block; margin-bottom:10px; object-fit:contain; object-position:center; background:#111; }
+    /* (Removed the page-level hero/headshot to avoid duplicate image) */
     .page-title { color:#ccc; text-align:center; margin:10px 0 30px; font-weight:normal; font-size:2.2rem; }
     nav ul { list-style:none; display:flex; justify-content:center; gap:20px; padding:0; margin:0; }
     nav ul li a { color:#66ccff; text-decoration:none; padding:8px 16px; border-radius:4px; transition:.3s ease; }
@@ -37,9 +37,12 @@
     .cpp__img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
 
     /* Body */
-    .cpp__body { padding:.9rem 1rem 1rem; }
-    .cpp__name { color:#e8e9ea; font-size:1rem; font-weight:600; margin:0 0 .25rem; letter-spacing:.01em; }
+    .cpp__body { padding:.95rem 1rem 1rem; }
+    .cpp__name { color:#e8e9ea; font-size:1.06rem; font-weight:700; margin:0 0 .35rem; letter-spacing:.01em; }
     .cpp__oneLiner { color:#9aa0a6; font-size:.95rem; line-height:1.35; margin:0; }
+
+    /* Martyn's enlarged blurb */
+    .cpp__blurb { color:#cfd1d4; font-size:1.02rem; line-height:1.55; margin:.25rem 0 0; }
 
     /* CTA icon */
     .cpp__cta { position:absolute; right:10px; bottom:10px; display:inline-grid; place-items:center; width:36px; height:36px; border-radius:50%; background:transparent; border:1px solid #1c1f24; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
@@ -85,11 +88,11 @@
     </div>
   </header>
 
-  <img src="img/IMG_5129.jpg" alt="Martyn Hopper" class="header-img" />
+  <!-- Removed page-level headshot to avoid duplication -->
   <h2 class="page-title">Team</h2>
 
   <main class="container">
-    <!-- YOUR CARD (same size/format as others) -->
+    <!-- Your card (same size as partner cards) -->
     <div class="cpp__inner">
       <ul class="cpp__grid" role="list" style="margin-top:0;">
         <li class="cpp__item">
@@ -99,7 +102,9 @@
             </figure>
             <div class="cpp__body">
               <h3 class="cpp__name">Martyn Hopper</h3>
-              <p class="cpp__oneLiner">Founder & Managing Director — law, regulation & public policy</p>
+              <p class="cpp__blurb">
+                Founder and Managing Director. Former regulator and City law-firm partner with three decades in the machinery of law, regulation and policy. Now advising quietly, independently, without compromise.
+              </p>
             </div>
             <span class="cpp__cta" aria-hidden="true">
               <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg">

@@ -1,400 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Team - Martyn Hopper & Partners</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #111;
-            color: #eee;
-            margin: 0;
-            line-height: 1.7;
-        }
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-        .site-header {
-            background: #000;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .header-img {
-            width: 100%;
-            height: 350px;
-            display: block;
-            margin-bottom: 10px;
-            object-fit: contain;
-            object-position: center;
-            background: #111;
-        }
-        .page-title {
-            color: #ccc;
-            text-align: center;
-            margin: 10px 0 30px;
-            font-weight: normal;
-            font-size: 2.2rem;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li a {
-            color: #66ccff;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #fff;
-            background: rgba(102, 204, 255, 0.1);
-            transform: translateY(-1px);
-        }
-        nav ul li a.current {
-            color: #fff;
-            background: rgba(102, 204, 255, 0.2);
-        }
-        a {
-            color: #66ccff;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #fff;
-        }
-        .site-logo {
-            display: block;
-            max-width: 280px;
-            margin: 15px auto;
-        }
-        
-        /* Enhanced typography */
-        h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            color: #ddd;
-            margin: 2.5rem 0 1.5rem 0;
-            font-weight: 500;
-        }
-        
-        h3 {
-            font-size: 1.6rem;
-            color: #ccc;
-            margin: 2rem 0 1rem 0;
-            font-weight: 500;
-            border-bottom: 2px solid rgba(102, 204, 255, 0.3);
-            padding-bottom: 0.5rem;
-        }
-        
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #eee;
-        }
-        
-        /* Enhanced profile section */
-        .profile-section {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .credentials-section {
-            background: rgba(102, 204, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid #66ccff;
-        }
+  <meta charset="UTF-8" />
+  <title>Team - Martyn Hopper & Partners</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .site-header {
+      background: #000;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header-img {
+      width: 100%;
+      height: 350px;
+      display: block;
+      margin-bottom: 10px;
+      object-fit: contain;
+      object-position: center;
+      background: #111;
+    }
+    .page-title {
+      color: #ccc;
+      text-align: center;
+      margin: 10px 0 30px;
+      font-weight: normal;
+      font-size: 2.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #66ccff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    nav ul li a.current {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.2);
+    }
+    a {
+      color: #66ccff;
+      transition: color 0.3s ease;
+    }
+    a:hover { color: #fff; }
+    .site-logo {
+      display: block;
+      max-width: 280px;
+      margin: 15px auto;
+    }
+    h2 {
+      font-size: 2.2rem;
+      color: #ddd;
+      margin: 2.5rem 0 1.5rem 0;
+      font-weight: 500;
+    }
 
-        /* COMPLETE REPLACEMENT CSS FOR LISTS */
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-        ul li {
-            list-style: none;
-            margin-bottom: 0.8rem;
-            padding-left: 1rem;
-            position: relative;
-        }
+    /* ===== Consulting Partner Panel (scoped) ===== */
+    .cpp { background:#0b0c0e; padding: 2rem 0 2.5rem; border-top:1px solid #1c1f24; }
+    .container .cpp__inner { width:100%; max-width:1000px; margin:0 auto; }
 
-        /* Professional highlight */
-        .experience-highlight {
-            background: rgba(102, 204, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-            border-left: 3px solid #66ccff;
-        }
+    .cpp__header { margin-bottom:1rem; }
+    .cpp__title { color:#e8e9ea; font-weight:600; letter-spacing:.02em; font-size:1.5rem; margin:0; }
+    .cpp__lede { color:#9aa0a6; margin:.5rem 0 0; max-width:60ch; }
 
-        /* Enhanced contact styling */
-        .contact-intro {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-        }
-        .contact-methods {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 12px;
-            opacity: 0.8;
-        }
-        .contact-label {
-            font-weight: 600;
-            color: #ccc;
-            min-width: 80px;
-            margin-right: 12px;
-        }
-        .contact-value {
-            color: #eee;
-        }
-        .contact-value a {
-            color: #66ccff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .contact-value a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        .primary-contact {
-            background: rgba(102, 204, 255, 0.1);
-            border-left: 3px solid #66ccff;
-            padding-left: 1rem;
-        }
-        .contact-note {
-            text-align: center;
-            font-style: italic;
-            color: #bbb;
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 4px;
-        }
+    /* Grid */
+    .cpp__grid {
+      list-style:none;
+      padding:0;
+      margin:1rem 0 0;
+      display:grid;
+      gap:1rem;
+      grid-template-columns:repeat(12,1fr);
+    }
+    .cpp__item { grid-column: span 12; }
+    @media (min-width:640px){ .cpp__item { grid-column: span 6; } } /* 2-up */
+    @media (min-width:960px){ .cpp__item { grid-column: span 4; } } /* 3-up */
+    .cpp__item--full { grid-column: span 12 !important; }
 
-        /* CTA section */
-        .cta-section {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #66ccff, #4da6e6);
-            color: #000;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 204, 255, 0.2);
-            margin: 0 0.5rem;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 204, 255, 0.3);
-            color: #000;
-        }
-        .cta-button.secondary {
-            background: transparent;
-            color: #66ccff;
-            border: 2px solid #66ccff;
-        }
-        .cta-button.secondary:hover {
-            background: #66ccff;
-            color: #000;
-        }
+    /* Card */
+    .cpp__card {
+      position:relative;
+      display:grid;
+      grid-template-rows:auto auto;
+      background:#101215;
+      border:1px solid #1c1f24;
+      border-radius:16px;
+      overflow:hidden;
+      text-decoration:none;
+      transition:transform .25s ease, border-color .25s ease;
+    }
+    .cpp__card:focus-visible { outline:2px solid #b08d57; outline-offset:2px; }
+    .cpp__card:hover { transform: translateY(-2px); border-color:#2a2e35; }
 
-        /* Responsive improvements */
-        @media screen and (max-width: 768px) {
-            .page-title {
-                font-size: 1.8rem;
-            }
-            h2 { font-size: 1.8rem; }
-            h3 { font-size: 1.4rem; }
-            p { font-size: 1.05rem; }
-            .profile-section, .credentials-section, .experience-highlight, .cta-section {
-                padding: 1.5rem;
-            }
-        }
+    /* Media */
+    .cpp__media {
+      aspect-ratio:1/1;
+      margin:0;
+      background:#0a0a0a;
+      display:grid;
+      place-items:center;
+      border-bottom:1px solid #1c1f24;
+      width:100%;
+    }
+    .cpp__img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
 
-        /* -----------------------------
-           Footer (house spec, 0.72rem)
-        ------------------------------*/
-        footer.site-footer {
-          background: #000;
-          color: #aaa;
-          border-top: 1px solid #222;
-          padding: 20px 0 24px;
-          font-size: 0.72rem;
-          line-height: 1.35;
-          opacity: 0.85;
-        }
-        footer.site-footer:hover { opacity: 1; }
-        footer.site-footer .footer-legal p { margin: 0.3rem 0; }
-        footer.site-footer .legal-links { margin-top: 0.3rem; }
-        footer.site-footer .separator { color: #555; margin: 0 0.5rem; }
-        footer.site-footer a {
-          color: #bbb;
-          text-decoration: none;
-          border-bottom: 1px dotted rgba(187,187,187,0.3);
-        }
-        footer.site-footer a:hover {
-          color: #eee;
-          border-bottom-color: rgba(238,238,238,0.7);
-        }
-        footer.site-footer * { font-size: inherit; }
-        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    /* Body */
+    .cpp__body { padding:.9rem 1rem 1rem; }
+    .cpp__name {
+      color:#e8e9ea;
+      font-size:1rem;
+      font-weight:600;
+      margin:0 0 .25rem;
+      letter-spacing:.01em;
+    }
+    .cpp__oneLiner {
+      color:#9aa0a6;
+      font-size:.95rem;
+      line-height:1.35;
+      margin:0;
+    }
 
-        /* ===== Consulting Partner Panel (scoped) ===== */
-        .cpp { background:#0b0c0e; padding: 2rem 0 2.5rem; border-top:1px solid #1c1f24; }
-        .container .cpp__inner { width:100%; max-width:1000px; margin:0 auto; }
+    /* CTA */
+    .cpp__cta {
+      position:absolute;
+      right:10px;
+      bottom:10px;
+      display:inline-grid;
+      place-items:center;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:transparent;
+      border:1px solid #1c1f24;
+      transition:background .25s ease, border-color .25s ease, transform .25s ease;
+    }
+    .cpp__icon {
+      width:18px;
+      height:18px;
+      color:#9aa0a6;
+      transition:color .25s ease;
+    }
+    .cpp__card:hover .cpp__cta {
+      background:rgba(176,141,87,.08);
+      border-color:#2a2e35;
+      transform: translateY(-1px);
+    }
+    .cpp__card:hover .cpp__icon { color:#e8e9ea; }
 
-        .cpp__header { margin-bottom:1rem; }
-        .cpp__title { color:#e8e9ea; font-weight:600; letter-spacing:.02em; font-size:1.5rem; margin:0; }
-        .cpp__lede { color:#9aa0a6; margin:.5rem 0 0; max-width:60ch; }
-
-        /* Grid */
-        .cpp__grid { list-style:none; padding:0; margin:1rem 0 0; display:grid; gap:1rem; grid-template-columns:repeat(12,1fr); }
-        .cpp__item { grid-column: span 12; }
-        @media (min-width:640px){ .cpp__item { grid-column: span 6; } }   /* 2-up */
-        @media (min-width:960px){ .cpp__item { grid-column: span 4; } }   /* 3-up */
-
-        /* Card */
-        .cpp__card { position:relative; display:grid; grid-template-rows:auto auto; background:#101215; border:1px solid #1c1f24; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform .25s ease, border-color .25s ease; }
-        .cpp__card:focus-visible { outline:2px solid #b08d57; outline-offset:2px; }
-        .cpp__card:hover { transform: translateY(-2px); border-color:#2a2e35; }
-
-        /* Media */
-        .cpp__media { aspect-ratio:1/1; margin:0; background:#0a0a0a; display:grid; place-items:center; border-bottom:1px solid #1c1f24; }
-        .cpp__img { width:100%; height:100%; object-fit:cover; object-position:50% 40%; display:block; }
-
-        /* Body */
-        .cpp__body { padding:.9rem 1rem 1rem; }
-        .cpp__name { color:#e8e9ea; font-size:1rem; font-weight:600; margin:0 0 .25rem; letter-spacing:.01em; }
-        .cpp__oneLiner { color:#9aa0a6; font-size:.95rem; line-height:1.35; margin:0; }
-
-        /* CTA */
-        .cpp__cta { position:absolute; right:10px; bottom:10px; display:inline-grid; place-items:center; width:36px; height:36px; border-radius:50%; background:transparent; border:1px solid #1c1f24; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
-        .cpp__icon { width:18px; height:18px; color:#9aa0a6; transition:color .25s ease; }
-        .cpp__card:hover .cpp__cta { background:rgba(176,141,87,.08); border-color:#2a2e35; transform: translateY(-1px); }
-        .cpp__card:hover .cpp__icon { color:#e8e9ea; }
-    </style>
+    /* Footer */
+    footer.site-footer {
+      background: #000;
+      color: #aaa;
+      border-top: 1px solid #222;
+      padding: 20px 0 24px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      opacity: 0.85;
+    }
+    footer.site-footer:hover { opacity: 1; }
+    footer.site-footer .footer-legal p { margin: 0.3rem 0; }
+    footer.site-footer .legal-links { margin-top: 0.3rem; }
+    footer.site-footer .separator { color: #555; margin: 0 0.5rem; }
+    footer.site-footer a {
+      color: #bbb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(187,187,187,0.3);
+    }
+    footer.site-footer a:hover {
+      color: #eee;
+      border-bottom-color: rgba(238,238,238,0.7);
+    }
+  </style>
 </head>
+
 <body>
-    <header class="site-header">
-        <div class="container">
-            <img src="img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
-            <nav>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/team.html" class="current">Team</a></li>
-                    <li><a href="/insight.html">Insights</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <img src="img/IMG_5129.jpg" alt="Martyn Hopper" class="header-img" />
-    <h2 class="page-title">Team</h2>
-    
-    <main class="container">
-        <div class="profile-section">
-            <p><strong>Martyn Hopper</strong><br>
-            Founder and Managing Director.</p>
-            <p>Former regulator and City law-firm partner. Three decades in the machinery of law, regulation and policy.</p>
-            <p>Now advising quietly, independently, without compromise.</p>
-            <p><a href="https://www.linkedin.com/in/martyn-hopper-6b480526">LinkedIn</a></p>
-        </div>
+  <header class="site-header">
+    <div class="container">
+      <img src="img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html" class="current">Team</a></li>
+          <li><a href="/insight.html">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-       <!-- Consulting Partner Panel -->
-<section id="consulting-partner-panel" class="cpp" aria-labelledby="cpp-title">
-  <div class="cpp__inner">
-    <header class="cpp__header">
-      <h2 id="cpp-title" class="cpp__title">Consulting Partner Panel</h2>
-      <p class="cpp__lede">A multidisciplinary network of senior experts who work with us on a project-by-project basis.</p>
-    </header>
+  <img src="img/IMG_5129.jpg" alt="Martyn Hopper" class="header-img" />
+  <h2 class="page-title">Team</h2>
 
-    <ul class="cpp__grid" role="list">
-      <!-- Sally Dewar -->
-      <li class="cpp__item">
-        <a class="cpp__card" href="/profiles/sally-dewar.html" aria-label="Read Sally Dewar’s full bio">
+  <main class="container">
+
+    <!-- Martyn Hopper Card -->
+    <ul class="cpp__grid" role="list" style="margin-top:0;">
+      <li class="cpp__item cpp__item--full">
+        <a class="cpp__card" href="/profiles/martyn-hopper.html" aria-label="Read Martyn Hopper’s full bio">
           <figure class="cpp__media">
-            <img
-              class="cpp__img"
-              src="/assets/team/partners/sally-dewar-square.jpg"
-              alt="Headshot of Sally Dewar"
-              style="object-position:50% 28%;" />
+            <img class="cpp__img" src="/assets/team/partners/martyn-hopper-square.jpg" alt="Headshot of Martyn Hopper" />
           </figure>
           <div class="cpp__body">
-            <h3 class="cpp__name">Sally Dewar</h3>
-            <p class="cpp__oneLiner">
-              Former regulator and consulting-practice head. Advises Boards on governance, culture and accountability.
-            </p>
-          </div>
-          <span class="cpp__cta" aria-hidden="true">
-            <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 12h10M13 6l6 6-6 6"
-                    fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>
-        </a>
-      </li>
-
-      <!-- Stephen Sanders -->
-      <li class="cpp__item">
-        <a class="cpp__card" href="/profiles/stephen-sanders.html" aria-label="Read Stephen Sanders’s full bio">
-          <figure class="cpp__media">
-            <img
-              class="cpp__img"
-              src="/assets/team/partners/stephen-sanders-square.jpg"
-              alt="Headshot of Stephen Sanders"
-              style="object-position:50% 32%;" />
-          </figure>
-          <div class="cpp__body">
-            <h3 class="cpp__name">Stephen Sanders</h3>
-            <p class="cpp__oneLiner">
-              Former compliance chief and regulator. Advises firms on conduct, risk and market integrity.
-            </p>
+            <h3 class="cpp__name">Martyn Hopper</h3>
+            <p class="cpp__oneLiner">Founder & Managing Director — law, regulation & public policy</p>
           </div>
           <span class="cpp__cta" aria-hidden="true">
             <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg">
@@ -406,35 +247,92 @@
         </a>
       </li>
     </ul>
-  </div>
-</section>
 
-        <div class="cta-section"> 
-            <a href="/insight.html" class="cta-button">Our Insights</a>
-            <a href="/about.html" class="cta-button secondary">Our Approach</a>
-            <a href="/contact.html" class="cta-button">Get In Touch</a>
-        </div>
-    </main>
+    <!-- Consulting Partner Panel -->
+    <section id="consulting-partner-panel" class="cpp" aria-labelledby="cpp-title">
+      <div class="cpp__inner">
+        <header class="cpp__header">
+          <h2 id="cpp-title" class="cpp__title">Consulting Partner Panel</h2>
+          <p class="cpp__lede">A multidisciplinary network of senior experts who work with us on a project-by-project basis.</p>
+        </header>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-legal">
-          <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
-          <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
-          <p>Professional indemnity insurance is maintained; details available on request.</p>
-          <p class="legal-links">
-            <a href="/legal.html">Legal &amp; Regulatory Notice</a>
-            <span class="separator">·</span>
-            <a href="/privacy.html">Privacy Notice</a>
-            <span class="separator">·</span>
-            <a href="/insight-disclaimer.html">Insight Disclaimer</a>
-          </p>
-        </div>
+        <ul class="cpp__grid" role="list">
+          <!-- Sally Dewar -->
+          <li class="cpp__item">
+            <a class="cpp__card" href="/profiles/sally-dewar.html" aria-label="Read Sally Dewar’s full bio">
+              <figure class="cpp__media">
+                <img class="cpp__img" src="/assets/team/partners/sally-dewar-square.jpg" alt="Headshot of Sally Dewar" />
+              </figure>
+              <div class="cpp__body">
+                <h3 class="cpp__name">Sally Dewar</h3>
+                <p class="cpp__oneLiner">
+                  Former regulator and consulting-practice head. Advises Boards on governance, culture and accountability.
+                </p>
+              </div>
+              <span class="cpp__cta" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 12h10M13 6l6 6-6 6"
+                        fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </li>
+
+          <!-- Stephen Sanders -->
+          <li class="cpp__item">
+            <a class="cpp__card" href="/profiles/stephen-sanders.html" aria-label="Read Stephen Sanders’s full bio">
+              <figure class="cpp__media">
+                <img class="cpp__img" src="/assets/team/partners/stephen-sanders-square.jpg" alt="Headshot of Stephen Sanders" />
+              </figure>
+              <div class="cpp__body">
+                <h3 class="cpp__name">Stephen Sanders</h3>
+                <p class="cpp__oneLiner">
+                  Former compliance chief and regulator. Advises firms on conduct, risk and market integrity.
+                </p>
+              </div>
+              <span class="cpp__cta" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="cpp__icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 12h10M13 6l6 6-6 6"
+                        fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
-    </footer>
-    <script>
-      (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
-    </script>
+    </section>
+
+    <div class="cta-section"> 
+      <a href="/insight.html" class="cta-button">Our Insights</a>
+      <a href="/about.html" class="cta-button secondary">Our Approach</a>
+      <a href="/contact.html" class="cta-button">Get In Touch</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+          <span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a>
+          <span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var y=document.getElementById('year');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
+  </script>
 </body>
 </html>

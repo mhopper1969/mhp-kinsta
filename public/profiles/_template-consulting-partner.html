@@ -2,61 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>{{NAME}} — Profile | Martyn Hopper & Partners</title>
+  <title>{{NAME}} – Martyn Hopper & Partners</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Profile of {{NAME}} — {{ROLE}} at Martyn Hopper & Partners." />
+  <meta name="description" content="{{NAME}} — {{ROLE}}. {{SHORT_TAGLINE}}" />
   <style>
-    :root{ --bg:#111; --ink:#eee; --ink-dim:#cfd1d4; --muted:#9aa0a6; --line:#1c1f24; --panel:#131419; --acc:#66ccff; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;line-height:1.7}
-    a{color:var(--acc);text-decoration:none} a:hover{color:#fff}
-    .container{width:92%;max-width:1000px;margin:0 auto;padding:20px}
+    /* Scoped to profile pages only */
+    .prof body { background:#111; color:#eee; font-family:'Segoe UI',sans-serif; line-height:1.7; }
+    .prof a { color:#66ccff; text-decoration:none; } .prof a:hover { color:#fff; }
+    .prof .container { width:90%; max-width:1000px; margin:0 auto; padding:20px; }
+    .prof .site-header { background:#000; text-align:center; }
+    .prof .site-logo { display:block; max-width:280px; margin:15px auto; }
+    .prof nav ul { list-style:none; display:flex; justify-content:center; gap:20px; padding:0; margin:0; }
+    .prof nav a { color:#66ccff; padding:8px 16px; border-radius:4px; transition:.3s; }
+    .prof nav a:hover { color:#fff; background:rgba(102,204,255,.1); transform:translateY(-1px); }
 
-    /* Site header */
-    .site-header{background:#000;color:#fff;text-align:center}
-    .site-logo{display:block;max-width:280px;margin:14px auto}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;justify-content:center}
-    nav a{color:var(--acc);padding:8px 14px;border-radius:4px;transition:.2s}
-    nav a:hover{background:rgba(102,204,255,.1);color:#fff}
+    .prof .page-title { color:#ccc; text-align:center; margin:12px 0 26px; font-weight:400; font-size:2rem; }
 
-    /* Hero image (use original/non-square portrait) */
-    .hero{width:100%;height:440px;background:#0e0e12;display:block;object-fit:cover;object-position:center;border-bottom:1px solid var(--line)}
-    @media (max-width:640px){ .hero{height:300px} }
+    /* Hero block (image + summary) */
+    .prof .profile-hero { display:grid; grid-template-columns:1fr; gap:20px; background:rgba(255,255,255,.05); border-radius:12px; padding:18px; }
+    .prof .portrait-wrap { display:grid; place-items:center; }
+    .prof .portrait {
+      width:100%; max-width:360px; height:auto; border-radius:10px;
+      border:1px solid rgba(255,255,255,.12); background:#0a0a0a; display:block;
+      object-fit:cover; object-position:center;
+    }
+    .prof .bio-head { padding:8px 6px; }
+    .prof .name { margin:0 0 6px; font-size:1.75rem; color:#fff; font-weight:600; letter-spacing:.01em; }
+    .prof .role { margin:0 0 12px; color:#9ecbff; font-size:1.05rem; }
+    .prof .one-liner { margin:0; color:#ddd; }
 
-    /* Typography/layout */
-    .page-title{margin:18px 0 6px;text-align:center;font-weight:600;font-size:2.1rem;color:#ddd}
-    .sub{margin:0 0 26px;text-align:center;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    @media (min-width:900px){ .grid{grid-template-columns:2fr 1fr} }
-    .panel{background: color-mix(in srgb, var(--panel) 92%, transparent); border:1px solid var(--line); border-radius:12px; padding:22px}
-    h2{font-size:1.35rem;margin:0 0 12px;color:#e7e7e9}
-    p{margin:0 0 14px;color:var(--ink)}
-    ul{margin:0 0 12px 0;padding:0;list-style:none}
-    li{margin:8px 0;padding-left:18px;position:relative;color:var(--ink-dim)}
-    li::before{content:"—";position:absolute;left:0;color:var(--muted)}
-    .dim{color:var(--ink-dim)}
+    /* Body copy */
+    .prof .bio { margin:26px 0 50px; }
+    .prof .bio h2 { font-size:1.35rem; color:#ddd; margin:0 0 10px; font-weight:600; border-bottom:2px solid rgba(102,204,255,.25); padding-bottom:6px; }
+    .prof .bio p { margin:0 0 14px; color:#eee; }
 
-    /* Contact panel */
-    .contact a{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;color:var(--ink);transition:.2s}
-    .contact a:hover{border-color:#2a2e35;transform:translateY(-1px)}
+    /* Back link chip */
+    .prof .back { margin:14px 0 0; display:inline-block; border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:10px 14px; background:rgba(255,255,255,.04); }
+    .prof .back:hover { background:rgba(102,204,255,.12); border-color:rgba(102,204,255,.35); }
 
-    /* Footer */
-    footer.site-footer{background:#000;color:#aaa;border-top:1px solid #222;padding:20px 0 24px;font-size:.72rem;line-height:1.35;opacity:.85}
-    footer.site-footer:hover{opacity:1}
-    footer.site-footer a{color:#bbb;border-bottom:1px dotted rgba(187,187,187,.3)}
-    footer .separator{color:#555;margin:0 .5rem}
+    /* Responsive two-column at desktop */
+    @media (min-width: 900px) {
+      .prof .profile-hero { grid-template-columns: 360px 1fr; align-items:start; padding:22px; gap:24px; }
+      .prof .name { font-size:2rem; }
+    }
   </style>
 </head>
-<body>
+<body class="prof">
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo" />
+      <a href="/index.html"><img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo" /></a>
       <nav>
         <ul>
           <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/services.html">Services</a></li>
-          <li><a href="/team.html">Team</a></li>
+          <li><a href="/team.html" class="current">Team</a></li>
           <li><a href="/insight.html">Insights</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
@@ -64,68 +65,43 @@
     </div>
   </header>
 
-  <!-- Original portrait for this partner -->
-  <img src="{{HERO_IMAGE_PATH}}" alt="Portrait of {{NAME}}" class="hero" />
+  <h1 class="page-title">Team</h1>
 
   <main class="container">
-    <h1 class="page-title">{{NAME}}</h1>
-    <p class="sub">{{ROLE}} — {{TAGLINE}}</p>
+    <a class="back" href="/team.html">← Back to Team</a>
 
-    <div class="grid">
-      <!-- Main column -->
-      <article class="panel">
-        <h2>Overview</h2>
-        <p>
-          {{NAME}} is {{SHORT_OVERVIEW_SENTENCE}}. {{PRONOUN}} advises Boards and senior leaders on
-          governance, conduct and regulatory risk, with a focus on practical, outcomes-oriented solutions
-          that stand up to scrutiny while supporting commercial ambition.
-        </p>
-        <p>
-          {{PRONOUN_CAP}} works across advisory, investigations and change programmes, helping clients translate
-          principles into operating reality and build control frameworks that enable predictable execution.
-        </p>
+    <!-- HERO SUMMARY -->
+    <section class="profile-hero" aria-labelledby="name">
+      <div class="portrait-wrap">
+        <!-- Use original/non-square portrait -->
+        <img class="portrait" src="{{HERO_IMAGE_PATH}}" alt="Portrait of {{NAME}}" />
+      </div>
+      <div class="bio-head">
+        <h2 id="name" class="name">{{NAME}}</h2>
+        <p class="role">{{ROLE}}</p>
+        <p class="one-liner">{{SHORT_TAGLINE}}</p>
+      </div>
+    </section>
 
-        <h2>Focus</h2>
-        <ul>
-          <li>{{FOCUS_BULLET_1}}</li>
-          <li>{{FOCUS_BULLET_2}}</li>
-          <li>{{FOCUS_BULLET_3}}</li>
-          <li>{{FOCUS_BULLET_4}}</li>
-          <li>{{FOCUS_BULLET_5}}</li>
-        </ul>
+    <!-- BIOGRAPHY -->
+    <section class="bio" aria-label="Biography">
+      <h2>Biography</h2>
+      <p>{{BIO_P1}}</p>
+      <p>{{BIO_P2}}</p>
 
-        <h2>Career</h2>
-        <ul>
-          <li>{{CAREER_LINE_1}}</li>
-          <li>{{CAREER_LINE_2}}</li>
-          <li>{{CAREER_LINE_3}}</li>
-        </ul>
+      <!-- Optional section (delete if not needed) -->
+      <h2>Areas of focus</h2>
+      <p>{{FOCUS_SENTENCE}}</p>
 
-        <h2>Approach</h2>
-        <p>
-          {{NAME}}’s approach emphasises clarity, accountability and proportionate controls — aligning regulatory
-          expectations with business objectives to create durable, growth-supportive outcomes.
-        </p>
+      <!-- Optional compact career line; keep high-signal names only -->
+      <h2>Career</h2>
+      <p>{{CAREER_LINE}}</p>
 
-        <div style="margin-top:18px;text-align:center">
-          <a href="/team.html" style="color:#9aa0a6">← Back to Team</a>
-        </div>
-      </article>
-
-      <!-- Side column -->
-      <aside class="panel">
-        <h2>Contact</h2>
-        <p class="dim">For advisory or speaking enquiries:</p>
-        <div class="contact" style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-          <a href="mailto:{{EMAIL}}" aria-label="Email {{NAME}}">{{EMAIL}}</a>
-          <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-        <hr style="border:none;border-top:1px solid var(--line);margin:18px 0">
-        <p class="dim">Location: London · Working with clients in the UK and internationally.</p>
-      </aside>
-    </div>
+      <p><a class="back" href="/team.html">← Back to Team</a></p>
+    </section>
   </main>
 
+  <!-- Footer (uses site style) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-legal">
@@ -145,6 +121,19 @@
 
   <script>
     (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
+
+  <!-- Structured data (fill only real fields) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{NAME}}",
+    "jobTitle": "{{ROLE}}",
+    "url": "https://martynhopper.com/profiles/{{SLUG}}.html",
+    "image": "https://martynhopper.com{{HERO_IMAGE_PATH}}",
+    "affiliation": { "@type": "Organization", "name": "Martyn Hopper & Partners" }
+  }
   </script>
 </body>
 </html>

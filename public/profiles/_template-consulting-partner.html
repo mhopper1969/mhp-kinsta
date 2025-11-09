@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{NAME}} — Profile | Martyn Hopper & Partners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Profile of {{NAME}} — {{ROLE}} at Martyn Hopper & Partners." />
+  <style>
+    :root{ --bg:#111; --ink:#eee; --ink-dim:#cfd1d4; --muted:#9aa0a6; --line:#1c1f24; --panel:#131419; --acc:#66ccff; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;line-height:1.7}
+    a{color:var(--acc);text-decoration:none} a:hover{color:#fff}
+    .container{width:92%;max-width:1000px;margin:0 auto;padding:20px}
+
+    /* Site header */
+    .site-header{background:#000;color:#fff;text-align:center}
+    .site-logo{display:block;max-width:280px;margin:14px auto}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;justify-content:center}
+    nav a{color:var(--acc);padding:8px 14px;border-radius:4px;transition:.2s}
+    nav a:hover{background:rgba(102,204,255,.1);color:#fff}
+
+    /* Hero image (use original/non-square portrait) */
+    .hero{width:100%;height:440px;background:#0e0e12;display:block;object-fit:cover;object-position:center;border-bottom:1px solid var(--line)}
+    @media (max-width:640px){ .hero{height:300px} }
+
+    /* Typography/layout */
+    .page-title{margin:18px 0 6px;text-align:center;font-weight:600;font-size:2.1rem;color:#ddd}
+    .sub{margin:0 0 26px;text-align:center;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px}
+    @media (min-width:900px){ .grid{grid-template-columns:2fr 1fr} }
+    .panel{background: color-mix(in srgb, var(--panel) 92%, transparent); border:1px solid var(--line); border-radius:12px; padding:22px}
+    h2{font-size:1.35rem;margin:0 0 12px;color:#e7e7e9}
+    p{margin:0 0 14px;color:var(--ink)}
+    ul{margin:0 0 12px 0;padding:0;list-style:none}
+    li{margin:8px 0;padding-left:18px;position:relative;color:var(--ink-dim)}
+    li::before{content:"—";position:absolute;left:0;color:var(--muted)}
+    .dim{color:var(--ink-dim)}
+
+    /* Contact panel */
+    .contact a{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;color:var(--ink);transition:.2s}
+    .contact a:hover{border-color:#2a2e35;transform:translateY(-1px)}
+
+    /* Footer */
+    footer.site-footer{background:#000;color:#aaa;border-top:1px solid #222;padding:20px 0 24px;font-size:.72rem;line-height:1.35;opacity:.85}
+    footer.site-footer:hover{opacity:1}
+    footer.site-footer a{color:#bbb;border-bottom:1px dotted rgba(187,187,187,.3)}
+    footer .separator{color:#555;margin:0 .5rem}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo" />
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/insight.html">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Original portrait for this partner -->
+  <img src="{{HERO_IMAGE_PATH}}" alt="Portrait of {{NAME}}" class="hero" />
+
+  <main class="container">
+    <h1 class="page-title">{{NAME}}</h1>
+    <p class="sub">{{ROLE}} — {{TAGLINE}}</p>
+
+    <div class="grid">
+      <!-- Main column -->
+      <article class="panel">
+        <h2>Overview</h2>
+        <p>
+          {{NAME}} is {{SHORT_OVERVIEW_SENTENCE}}. {{PRONOUN}} advises Boards and senior leaders on
+          governance, conduct and regulatory risk, with a focus on practical, outcomes-oriented solutions
+          that stand up to scrutiny while supporting commercial ambition.
+        </p>
+        <p>
+          {{PRONOUN_CAP}} works across advisory, investigations and change programmes, helping clients translate
+          principles into operating reality and build control frameworks that enable predictable execution.
+        </p>
+
+        <h2>Focus</h2>
+        <ul>
+          <li>{{FOCUS_BULLET_1}}</li>
+          <li>{{FOCUS_BULLET_2}}</li>
+          <li>{{FOCUS_BULLET_3}}</li>
+          <li>{{FOCUS_BULLET_4}}</li>
+          <li>{{FOCUS_BULLET_5}}</li>
+        </ul>
+
+        <h2>Career</h2>
+        <ul>
+          <li>{{CAREER_LINE_1}}</li>
+          <li>{{CAREER_LINE_2}}</li>
+          <li>{{CAREER_LINE_3}}</li>
+        </ul>
+
+        <h2>Approach</h2>
+        <p>
+          {{NAME}}’s approach emphasises clarity, accountability and proportionate controls — aligning regulatory
+          expectations with business objectives to create durable, growth-supportive outcomes.
+        </p>
+
+        <div style="margin-top:18px;text-align:center">
+          <a href="/team.html" style="color:#9aa0a6">← Back to Team</a>
+        </div>
+      </article>
+
+      <!-- Side column -->
+      <aside class="panel">
+        <h2>Contact</h2>
+        <p class="dim">For advisory or speaking enquiries:</p>
+        <div class="contact" style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+          <a href="mailto:{{EMAIL}}" aria-label="Email {{NAME}}">{{EMAIL}}</a>
+          <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--line);margin:18px 0">
+        <p class="dim">Location: London · Working with clients in the UK and internationally.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+          <span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a>
+          <span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{NAME}} – Martyn Hopper & Partners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{NAME}} — {{ROLE}}. {{SHORT_TAGLINE}}" />
+  <style>
+    /* Scoped to profile pages only */
+    .prof body { background:#111; color:#eee; font-family:'Segoe UI',sans-serif; line-height:1.7; }
+    .prof a { color:#66ccff; text-decoration:none; } .prof a:hover { color:#fff; }
+    .prof .container { width:90%; max-width:1000px; margin:0 auto; padding:20px; }
+    .prof .site-header { background:#000; text-align:center; }
+    .prof .site-logo { display:block; max-width:280px; margin:15px auto; }
+    .prof nav ul { list-style:none; display:flex; justify-content:center; gap:20px; padding:0; margin:0; }
+    .prof nav a { color:#66ccff; padding:8px 16px; border-radius:4px; transition:.3s; }
+    .prof nav a:hover { color:#fff; background:rgba(102,204,255,.1); transform:translateY(-1px); }
+
+    .prof .page-title { color:#ccc; text-align:center; margin:12px 0 26px; font-weight:400; font-size:2rem; }
+
+    /* Hero block (image + summary) */
+    .prof .profile-hero { display:grid; grid-template-columns:1fr; gap:20px; background:rgba(255,255,255,.05); border-radius:12px; padding:18px; }
+    .prof .portrait-wrap { display:grid; place-items:center; }
+    .prof .portrait {
+      width:100%; max-width:360px; height:auto; border-radius:10px;
+      border:1px solid rgba(255,255,255,.12); background:#0a0a0a; display:block;
+      object-fit:cover; object-position:center;
+    }
+    .prof .bio-head { padding:8px 6px; }
+    .prof .name { margin:0 0 6px; font-size:1.75rem; color:#fff; font-weight:600; letter-spacing:.01em; }
+    .prof .role { margin:0 0 12px; color:#9ecbff; font-size:1.05rem; }
+    .prof .one-liner { margin:0; color:#ddd; }
+
+    /* Body copy */
+    .prof .bio { margin:26px 0 50px; }
+    .prof .bio h2 { font-size:1.35rem; color:#ddd; margin:0 0 10px; font-weight:600; border-bottom:2px solid rgba(102,204,255,.25); padding-bottom:6px; }
+    .prof .bio p { margin:0 0 14px; color:#eee; }
+
+    /* Back link chip */
+    .prof .back { margin:14px 0 0; display:inline-block; border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:10px 14px; background:rgba(255,255,255,.04); }
+    .prof .back:hover { background:rgba(102,204,255,.12); border-color:rgba(102,204,255,.35); }
+
+    /* Responsive two-column at desktop */
+    @media (min-width: 900px) {
+      .prof .profile-hero { grid-template-columns: 360px 1fr; align-items:start; padding:22px; gap:24px; }
+      .prof .name { font-size:2rem; }
+    }
+  </style>
+</head>
+<body class="prof">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/index.html"><img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo" /></a>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html" class="current">Team</a></li>
+          <li><a href="/insight.html">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1 class="page-title">Team</h1>
+
+  <main class="container">
+    <a class="back" href="/team.html">← Back to Team</a>
+
+    <!-- HERO SUMMARY -->
+    <section class="profile-hero" aria-labelledby="name">
+      <div class="portrait-wrap">
+        <!-- Use original/non-square portrait -->
+        <img class="portrait" src="/assets/profiles/ula-cartwright-finch.jpg" alt="Portrait of Dr Ula Cartwright-Finch" />
+      </div>
+      <div class="bio-head">
+        <h2 id="name" class="name">Dr Ula Cartwright-Finch</h2>
+        <p class="role">Legal Psychology, Behavioural Science and Decision-Making Expert</p>
+        <p class="one-liner">Specialist in applying behavioural and cognitive science to law, investigations and organisational decision-making.</p>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHY -->
+    <section class="bio" aria-label="Biography">
+      <h2>Biography</h2>
+      <p>Ula is an internationally recognised expert on the application of psychological and behavioural science to legal practice, investigations and business decision-making. A solicitor advocate by background, she spent more than twelve years at Herbert Smith Freehills and Linklaters acting as counsel in complex arbitration, litigation and regulatory proceedings for investment banks, corporates and governments across Europe and Asia. Her legal career has also included senior in-house and advisory roles in Compliance at Goldman Sachs, Regulatory at Three, and Risk in a global professional services firm, giving her deep, practical insight into the regulatory and conduct environments of major financial institutions.</p>
+      <p>Alongside her legal practice, Ula holds a doctorate in cognitive psychology from University College London and an MA in Psychology from the University of St Andrews, where her studies focused on human attention and memory, behavioural neuroscience, computational neuroscience and artificial intelligence. She now brings these disciplines together in her work as Founder of Cortex Capital, where she educates legal professionals and conducts original research on the cognitive and behavioural dimensions of law, decision-making and organisational practice.</p>
+      <p>Ula is widely recognised for her ground-breaking work on fact-witness accuracy in investigations and interviewing, designing and delivering advanced training for law firms, corporates, regulators and enforcement teams globally. Her research portfolio focuses on applying empirical psychological science to real-world legal and regulatory practice. She is commissioned by global institutions, such as the International Bar Association, to lead research projects on topics including professional decision-making under uncertainty, diversity in arbitral tribunals, and the reliability of fact witness memory.</p>
+      <p>Ula is a Research Fellow at the University of Warwick and lectures on Strategic Decision-Making at Queen Mary University of London. She is also a frequent guest lecturer and speaker to legal, academic and professional audiences internationally. Ula publishes regularly on the application of psychological science to legal practice, investigations and organisational decision-making. </p>
+      
+      <p><a class="back" href="/team.html">← Back to Team</a></p>
+    </section>
+  </main>
+
+  <!-- Footer (uses site style) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+          <span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a>
+          <span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
+
+  <!-- Structured data (fill only real fields) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr Ula Cartwirght-Finch",
+    "jobTitle": "Legal Psychology, Behavioural Science and Decision-Making Expert",
+    "url": "https://martynhopper.com/profiles/ula-cartwright-finch.html",
+    "image": "https://martynhopper.com/assets/profiles/ula-cartwright-finch.jpg",
+    "affiliation": { "@type": "Organization", "name": "Martyn Hopper & Partners" }
+  }
+  </script>
+</body>
+</html>

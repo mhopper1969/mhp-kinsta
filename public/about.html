@@ -106,26 +106,36 @@
             color: #eee;
         }
         
-        /* COMPLETE REPLACEMENT CSS FOR LISTS - REMOVE ALL EXISTING UL/LI CSS AND USE ONLY THIS */
+       /* About page content lists only (do not affect nav) */
+.values-section ul,
+.differentiators-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
+.values-section li,
+.differentiators-section li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
 
-        ul li {
-            list-style: none;
-            margin-bottom: 0.8rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-        
-        ul li strong {
-            color: #66ccff;
-            font-weight: 600;
-        }
-        
+.values-section li::before,
+.differentiators-section li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #66ccff;
+}
+
+.values-section li strong,
+.differentiators-section li strong {
+    color: #66ccff;
+    font-weight: 600;
+}
+ 
         /* Enhanced sections */
         .values-section {
             background: rgba(255, 255, 255, 0.05);
@@ -277,16 +287,47 @@
     <h2 class="page-title">About us</h2>
     
     <main class="container">
-        <p>A small, senior advisory built for complex, regulated environments.</p>
-        <p>Legal judgement, regulatory insight and policy sense — joined up, not siloed.</p>
-        <p>Independent in ownership and outlook. Focused on clarity, integrity and lasting impact.</p>
-        <p><a href="/services.html">What we do</a></p>
-        <div class="cta-section">
-            <a href="/insight.html" class="cta-button">Our Insights</a>
-            <a href="/team.html" class="cta-button secondary">Our Team</a>
-            <a href="/contact.html" class="cta-button">Get In Touch</a>
-        </div>
-    </main>
+
+    <p>A small, senior advisory built for complex, regulated environments.</p>
+    <p>Legal judgement, regulatory insight and policy sense — joined up, not siloed.</p>
+    <p>Independent in ownership and outlook. Focused on clarity, integrity and lasting impact.</p>
+
+    <div class="values-section">
+        <h3>What we help with</h3>
+        <p>
+            We work where scrutiny is high and outcomes matter — including investigations and enforcement risk,
+            conduct and customer outcomes, governance failures, and transformation where accountability is harder to evidence.
+        </p>
+        <p><a href="/services.html">What we do in practice</a></p>
+    </div>
+
+    <div class="differentiators-section">
+        <h3>What differentiates our approach</h3>
+        <ul>
+            <li><strong>Senior-led delivery</strong> from start to finish — no leverage model, no bureaucracy</li>
+            <li><strong>Multidisciplinary by design</strong>, bringing together legal, regulatory, behavioural and technology insight where it adds value</li>
+            <li><strong>Defensibility under scrutiny</strong>: helping clients show what was known, what was decided, and why it was reasonable at the time</li>
+        </ul>
+    </div>
+
+    <div class="values-section">
+        <h3>How we work</h3>
+        <ul>
+            <li><strong>Clear scope and outputs</strong>, with board-ready reporting where needed</li>
+            <li><strong>Independent perspective</strong> and direct advice</li>
+            <li><strong>Practical recommendations</strong> designed for implementation under real-world constraints</li>
+            <li><strong>Discreet engagement</strong> with a low-friction working style</li>
+        </ul>
+    </div>
+
+    <div class="cta-section">
+        <a href="/services.html" class="cta-button secondary">Our Services</a>
+        <a href="/insight.html" class="cta-button">Our Insights</a>
+        <a href="/team.html" class="cta-button secondary">Our Team</a>
+        <a href="/contact.html" class="cta-button">Get In Touch</a>
+    </div>
+
+</main>
 
     <!-- FOOTER -->
     <footer class="site-footer">

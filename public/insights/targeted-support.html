@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Targeted support, suitability and hindsight risk</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .site-header {
+      background: #000;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header-img {
+      width: 100%;
+      height: 320px;
+      display: block;
+      margin-bottom: 10px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .page-title {
+      color: #ccc;
+      text-align: center;
+      margin: 10px 0 30px;
+      font-weight: normal;
+      font-size: 2.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #66ccff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    nav ul li a.current {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.2);
+    }
+    a { color: #66ccff; transition: color 0.3s ease; }
+    a:hover { color: #fff; }
+    .site-logo {
+      display: block;
+      max-width: 280px;
+      margin: 15px auto;
+    }
+    h1 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600; }
+    h2 { font-size: 2.2rem; color: #ddd; margin: 2.5rem 0 1.5rem 0; font-weight: 500; }
+    h3 {
+      font-size: 1.6rem;
+      color: #ccc;
+      margin: 2rem 0 1rem 0;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(102, 204, 255, 0.3);
+      padding-bottom: 0.5rem;
+    }
+    p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: #eee; }
+    ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+    ul li { margin-bottom: 0.8rem; padding-left: 1rem; position: relative; }
+    ul li::before { content: '▸'; color: #66ccff; font-weight: bold; position: absolute; left: 0; }
+    .byline { color:#aaa; font-size:.95rem; margin:-12px 0 22px; text-align:center; }
+    .byline .author { color:#ddd; }
+    .byline .date { color:#9aa0a6; margin-left:.6rem; }
+
+    @media screen and (max-width: 768px) {
+      .page-title { font-size: 1.8rem; }
+      h2 { font-size: 1.8rem; }
+      h3 { font-size: 1.4rem; }
+      p { font-size: 1.05rem; }
+    }
+
+    .disclaimer-inline {
+      color: #aaa;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      margin: 1.2rem 0 1.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer.site-footer {
+      background: #000;
+      color: #aaa;
+      border-top: 1px solid #222;
+      padding: 20px 0 24px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      opacity: 0.85;
+    }
+    footer.site-footer:hover { opacity: 1; }
+    footer.site-footer .footer-legal p { margin: 0.3rem 0; }
+    footer.site-footer a {
+      color: #bbb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(187,187,187,0.3);
+    }
+    footer.site-footer a:hover {
+      color: #eee;
+      border-bottom-color: rgba(238,238,238,0.7);
+    }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/insight.html" class="current">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <img src="/img/insight.png" alt="insights" class="header-img" />
+  <h2 class="page-title">Law, regulation and public policy — from defence to design</h2>
+
+  <main class="container">
+    <div class="byline">
+      <span class="author"><strong>Martyn Hopper</strong></span>
+      <span class="date">Posted: 16 January 2026</span>
+    </div>
+
+    <article>
+      <h1>Targeted support, suitability and hindsight risk</h1>
+
+      <p>
+        The FCA’s targeted support regime (PS25/22) is intended to close the advice gap by allowing firms to provide
+        ready-made suggestions to consumer segments with shared needs or characteristics, without triggering the full
+        cost and friction associated with individualised advice.
+      </p>
+
+      <p>
+        The policy objective is clear. The operational reality is more subtle. Targeted support reduces ex ante prescription,
+        but it does not remove outcomes-based scrutiny. In particular, the FCA has been explicit that both
+        <strong>Principle 9 (suitability)</strong> and <strong>Principle 12 (Consumer Duty)</strong> continue to apply.
+      </p>
+
+      <p>
+        This briefing focuses on what that means in practice, why hindsight reconstruction risk becomes the dominant exposure,
+        and how firms can make predictable, defensible use of the regime.
+      </p>
+
+      <h2>1. What PS25/22 changes (and what it does not)</h2>
+
+      <p>
+        PS25/22 introduces a new framework for targeted support in pensions and investments. The regime is designed to sit
+        between generic information/guidance and full regulated advice. It allows firms to:
+      </p>
+
+      <ul>
+        <li>define <strong>consumer segments</strong> with shared needs, objectives or characteristics;</li>
+        <li>provide <strong>ready-made suggestions</strong> intended to be appropriate for those segments;</li>
+        <li>do so without conducting a full individualised suitability assessment in the COBS 9/9A sense.</li>
+      </ul>
+
+      <p>
+        The key point is that targeted support is not a “safe harbour”. The detailed COBS suitability machinery may not apply
+        in full, but the core normative standards—suitability and good outcomes—remain in play via Principles 9 and 12.
+      </p>
+
+      <h2>2. The structural tension: “better position” vs “good outcomes”</h2>
+
+      <p>
+        The FCA frames the objective of targeted support as placing consumers in a <strong>better position</strong>, rather than
+        guaranteeing an outcome. This helps differentiate targeted support from advice and avoids implying a promise of performance.
+      </p>
+
+      <p>
+        However, the Consumer Duty’s organising concept is <strong>good outcomes</strong>, including preventing foreseeable harm,
+        supporting consumer understanding and ensuring fair value. Once harm crystallises—particularly in volatile markets—reviewers
+        will naturally gravitate towards outcomes-based reasoning.
+      </p>
+
+      <p>
+        In practice, firms should assume that the “better position” framing will not, on its own, constrain hindsight evaluation.
+        The defensibility of design choices will matter more than labels.
+      </p>
+
+      <h2>3. Why hindsight reconstruction becomes the dominant risk</h2>
+
+      <p>
+        Targeted support reduces front-end prescription. The trade-off is that firms must be able to reconstruct, defend and evidence
+        their judgement later. In complaints, supervision or enforcement, the questions tend to be concrete:
+      </p>
+
+      <ul>
+        <li>Why was the consumer placed in this segment?</li>
+        <li>What risks were identified as foreseeable at the design stage—and how were they mitigated?</li>
+        <li>What assumptions were made about consumer understanding and behaviour?</li>
+        <li>Why was the ready-made suggestion reasonable given what was known at the time?</li>
+      </ul>
+
+      <p>
+        This is the critical mindset shift: targeted support is less about satisfying a prescribed process and more about demonstrating
+        that the firm operated a <strong>governed decision-making system</strong>.
+      </p>
+
+      <h2>4. Segment design is a regulated judgement, not a marketing exercise</h2>
+
+      <p>
+        PS25/22 expressly warns against segmentation becoming so granular that it replicates advice-level personalisation. This warning
+        is important, because commercial incentives push towards more tailoring: more questions, more nuance, higher conversion.
+      </p>
+
+      <p>
+        The risk is “segment drift”: targeted support journeys slowly become advice-like in substance. That creates two problems:
+      </p>
+
+      <ol>
+        <li>
+          <strong>Boundary fragility</strong>: if the journey looks and feels like individualised advice, it becomes harder to rely on
+          the segment-based framing when challenged.
+        </li>
+        <li>
+          <strong>Expectation inflation</strong>: the more personalised the journey appears, the more likely reviewers are to import
+          advice-like expectations under suitability and the Duty.
+        </li>
+      </ol>
+
+      <p>
+        Firms need a disciplined approach to segment definition, including documented inclusion/exclusion criteria, explicit assumptions,
+        and a clear rationale for the trade-offs being made.
+      </p>
+
+      <h2>5. Communications and behavioural design will be scrutinised</h2>
+
+      <p>
+        Under targeted support, a technically accurate disclosure is rarely a complete defence. The Consumer Duty raises the bar from
+        “clear and not misleading” to “supports understanding in practice”.
+      </p>
+
+      <p>
+        Firms should expect scrutiny of design choices such as:
+      </p>
+
+      <ul>
+        <li>salience and sequencing of risk information;</li>
+        <li>defaults, nudges and friction;</li>
+        <li>how downside scenarios are presented relative to headline benefits;</li>
+        <li>how the firm tests whether consumers actually understood key risks.</li>
+      </ul>
+
+      <p>
+        In short: outcomes-based regulation tends to become behavioural regulation in practice.
+      </p>
+
+      <h2>6. Making the regime predictable: a practical operating model</h2>
+
+      <p>
+        Firms can use targeted support safely and at scale, but it requires disciplined governance. The starting point is to treat
+        targeted support as a system that must be defensible under retrospective review.
+      </p>
+
+      <h3>Six design and governance disciplines</h3>
+
+      <ol>
+        <li><strong>Define segments as regulatory artefacts</strong></li>
+        <li><strong>Document trade-offs explicitly</strong></li>
+        <li><strong>Foreseeable harm registers for each segment</strong></li>
+        <li><strong>Evidence “support for understanding”</strong></li>
+        <li><strong>Change management and monitoring</strong></li>
+        <li><strong>Complaints defensibility pack</strong></li>
+      </ol>
+
+      <p>
+        The objective is to make targeted support predictable: not by eliminating judgement, but by making judgement transparent,
+        governed and evidenced.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        Targeted support can expand access and reduce friction. But firms should be under no illusion: the continued application of
+        Principle 9 and the Consumer Duty means the regime does not remove suitability and outcomes thinking—it relocates it into
+        governance quality and hindsight defensibility.
+      </p>
+
+      <p>
+        Firms that treat targeted support as “advice-lite” will find that complexity is not removed, only deferred. Firms that treat it
+        as a governed decision-making system can use it with confidence.
+      </p>
+    </article>
+  </main>
+
+  <div class="disclaimer-inline container">
+    <strong>This Insight reflects our independent perspective only and is not legal advice.</strong>
+    <a href="/insight-disclaimer.html">Full disclaimer →</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
+</body>
+</html>

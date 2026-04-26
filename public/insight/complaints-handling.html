@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-7hn1RJH1kbYBi5WmT_E6A.js"></script>
+  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+  <title>AI in Complaints Handling — The Technology, the Duty, and the Senior Manager's Choice | MH&P Insights</title>
+  <meta name="description" content="What AI architectures already being deployed in UK financial services complaints functions can and cannot do under DISP 1.4 — and what senior managers are being asked to decide while the FCA's position remains unsettled.">
+  <link rel="canonical" href="https://www.martynhopper.com/insights/ai-complaints-handling.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI in Complaints Handling — The Technology, the Duty, and the Senior Manager's Choice | MH&P Insights">
+  <meta property="og:description" content="What AI architectures already being deployed in UK financial services complaints functions can and cannot do under DISP 1.4 — and what senior managers are being asked to decide while the FCA's position remains unsettled.">
+  <meta property="og:url" content="https://www.martynhopper.com/insights/ai-complaints-handling.html">
+  <meta property="og:image" content="https://www.martynhopper.com/img/ai-complaints-insight.jpg">
+  <meta property="og:site_name" content="Martyn Hopper & Partners">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .site-header {
+      background: #000;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header-img {
+      width: 100%;
+      height: 320px;
+      display: block;
+      margin-bottom: 10px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .page-title {
+      color: #ccc;
+      text-align: center;
+      margin: 10px 0 30px;
+      font-weight: normal;
+      font-size: 2.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #66ccff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    nav ul li a.current {
+      color: #fff;
+      background: rgba(102, 204, 255, 0.2);
+    }
+    a {
+      color: #66ccff;
+      transition: color 0.3s ease;
+    }
+    a:hover { color: #fff; }
+    .site-logo {
+      display: block;
+      max-width: 280px;
+      margin: 15px auto;
+    }
+    h1 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600; }
+    h2 { font-size: 2.2rem; color: #ddd; margin: 2.5rem 0 1.5rem 0; font-weight: 500; }
+    h3 {
+      font-size: 1.6rem;
+      color: #ccc;
+      margin: 2rem 0 1rem 0;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(102, 204, 255, 0.3);
+      padding-bottom: 0.5rem;
+    }
+    p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: #eee; }
+    ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+    ul li { margin-bottom: 0.8rem; padding-left: 1rem; position: relative; }
+    ul li::before { content: '▸'; color: #66ccff; font-weight: bold; position: absolute; left: 0; }
+    .byline { color:#aaa; font-size:.95rem; margin:-12px 0 22px; text-align:center; }
+    .byline .author { color:#ddd; }
+    .byline .date { color:#9aa0a6; margin-left:.6rem; }
+    .lede { font-style: italic; color: #ddd; border-left: 3px solid #66ccff; padding: 0.5rem 1rem; background: rgba(102,204,255,0.04); }
+    .divider { text-align:center; color:#888; letter-spacing:0.6em; margin: 2.5rem 0; }
+
+    @media screen and (max-width: 768px) {
+      .page-title { font-size: 1.8rem; }
+      h2 { font-size: 1.8rem; }
+      h3 { font-size: 1.4rem; }
+      p { font-size: 1.05rem; }
+    }
+
+    .disclaimer-inline {
+      color: #aaa;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      margin: 1.2rem 0 1.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .disclaimer-inline a {
+      color: #bbb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(187,187,187,0.3);
+    }
+    .disclaimer-inline a:hover {
+      color: #eee;
+      border-bottom-color: rgba(238,238,238,0.7);
+    }
+
+    footer.site-footer {
+      background: #000;
+      color: #aaa;
+      border-top: 1px solid #222;
+      padding: 20px 0 24px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      opacity: 0.85;
+    }
+    footer.site-footer:hover { opacity: 1; }
+    footer.site-footer .footer-legal p { margin: 0.3rem 0; }
+    footer.site-footer .legal-links { margin-top: 0.3rem; }
+    footer.site-footer .separator { color: #555; margin: 0 0.5rem; }
+    footer.site-footer a {
+      color: #bbb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(187,187,187,0.3);
+    }
+    footer.site-footer a:hover {
+      color: #eee;
+      border-bottom-color: rgba(238,238,238,0.7);
+    }
+    footer.site-footer * { font-size: inherit; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="/img/logo.png" alt="Martyn Hopper & Partners" class="site-logo"/>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/insight.html" class="current">Insights</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <img src="/img/ai-complaints-insight.jpg" alt="AI in Complaints Handling" class="header-img" />
+  <h2 class="page-title">AI in Complaints Handling: The Technology, the Duty, and the Senior Manager's Choice</h2>
+
+  <main class="container">
+    <div class="byline">
+      <span class="author"><strong>Martyn Hopper</strong></span>
+      <span class="date">Posted: 27 April 2026</span>
+    </div>
+
+    <article>
+      <p class="lede">Last week's launch of Objection put AI adjudication in the headlines. The more immediate question for UK financial services firms is what the architectures already being deployed in complaints functions can and cannot do under DISP 1.4 — and what senior managers are being asked to decide while the FCA's position remains unsettled.</p>
+
+      <p>Last week saw the launch of Objection, a Peter Thiel–backed public adjudication platform in which a "jury" of language models reaches decisions on contested claims in real time. The technology beneath it is unremarkable — production LLM systems built from architectural patterns familiar from any enterprise deployment. The interest of the launch is the cultural moment it marks. AI adjudication has moved from speculative to deployed.</p>
+
+      <p>Some thinkers have been anticipating this for a long time. Richard Susskind has been writing about AI in adjudicative work since the 1990s. <em>The Future of Law</em>, <em>Tomorrow's Lawyers</em>, and <em>Online Courts and the Future of Justice</em> each predicted, in turn, the emergence of AI-mediated dispute resolution platforms with structures very like the one Objection has launched. What was once horizon-scanning is now a working system on the public internet.</p>
+
+      <p>For UK financial services, the current question is not whether AI will adjudicate disputes in some abstract future, but what the choices firms are making now to deploy AI tools in their complaints functions imply for the regulatory standard those functions have to meet. The pitch arriving on senior managers' desks is for AI complaints handling at the volumes UK firms process, with specific efficiency claims and an explicit "human in the loop" promise. The architectural reality of what these systems actually do, and the regulatory consequences that follow, is not always clear and that is the subject of this piece.</p>
+
+      <h2>The live regulatory motion</h2>
+
+      <p>This discussion is timely because the regulatory framework around AI in financial services is in flux. The Treasury Select Committee published a report in January 2026 warning that the current "wait and see" approach of the Bank of England, the FCA, and the Treasury to AI in financial services risks "serious harm" to consumers and the wider system, and recommending that the FCA issue practical guidance on the application of existing rules to AI usage by the end of 2026. Days later, the FCA launched the Mills Review — a forward-looking review of AI's impact on retail financial services through to 2030. The Financial Ombudsman Service responded in April 2026, calling explicitly for FCA clarity on expectations for record-keeping, paths to human escalation, and dispute handling where no human is involved.</p>
+
+      <p>Regulators are signalling that the existing principles-based framework — the Consumer Duty, SM&amp;CR, DISP, the Conduct Rules — applies to AI deployments, with operational expectations to follow. The substantive obligations have not changed. What has not yet been settled is how the obligations apply to the specific architectural choices firms are now making. That gap is the operational backdrop against which senior managers are being asked to decide.</p>
+
+      <h2>What is being pitched</h2>
+
+      <p>The dominant vendor pitches in the UK FS market combine three claims: significant efficiency gains, an audit trail satisfying regulatory record-keeping expectations, and a human in the loop providing meaningful review. The published headline figures are striking — case-handling time reductions in the order of eighty percent, cost-per-case reductions in the order of fifty percent, case closure cycles compressed from weeks to minutes on cases that would previously have required investigators to pull material from multiple internal systems.</p>
+
+      <p>What the public materials do not describe — and this is the analytically significant point — is the decision pipeline. Vendor materials in this market describe components and outcomes in detail. They describe data architectures, multi-agent orchestration, governance features, audit logs, and the integration plumbing that connects the system to the firm's data sources. They do not describe how the system identifies the issues for determination on a given complaint, how it interrogates the knowledge base, how it weighs the relevance of what it finds, what it selects for analysis, or how it generates the recommended outcome and reasoning. The technical material that vendors do publish is consistent with what would be expected: the system is not reading the whole file each time, but selecting parts of it. What the public material does not specify is how the selection is made — what makes one chunk of the file rise to the top and another fall away, who controls that, and how the choices are checked.</p>
+
+      <p>This is characteristic of the genre rather than peculiar to any one vendor. The pipeline is the product, and competitive sensitivity protects it. In honest engineering terms, modern multi-agent large language model ("LLM") systems do not have a tidy specification of how they reach their decisions; the system's behaviour emerges from the interaction of its components on a given input, and is observed empirically rather than read off a specification document. And precision creates a hostage to fortune for the vendor: vagueness preserves optionality if the system in deployment behaves differently from a published account.</p>
+
+      <h2>What the technology is doing</h2>
+
+      <p>Production AI systems are operating across a wide range of file sizes and case complexities. For a straightforward complaint with a bounded evidential record — a transactional dispute over a single fee, a card transaction the customer says was not theirs — the file may run to a few dozen pages, and a frontier LLM can read the whole record at full attention within sensible cost and latency budgets. The architectural concerns this piece raises do not bite in the same way on those cases.</p>
+
+      <p>The pitches arriving on senior managers' desks, however, are calibrated to harder economics than that. Vendor case studies typically describe firms whose investigators were pulling material from more than ten internal systems on each complaint, with manual investigation cycles running to several weeks per case. That is not a fifty-page file. It is a multi-source aggregation of structured account data, correspondence chains, system logs, advice records, and unstructured documents that on a complex case may run to hundreds of pages of evidential material. A system delivering eighty percent reductions in case-handling time on cases of that profile, with case closure cycles compressed from weeks to minutes, is not running every page of every source through full-attention reasoning. The economics do not work, and the empirical performance of language models on inputs of that scale degrades meaningfully even within their advertised context windows. The system is selecting.</p>
+
+      <p>The dominant production pattern for tasks of this kind is retrieval-augmented generation, or some variant of it. The architectural detail that does emerge from public technical material is consistent with this pattern. The file is broken into chunks. The system creates a numerical fingerprint for each chunk that captures something about its content. When asked to reach a conclusion on a complaint, the system compares the question to those fingerprints and surfaces the small number of chunks that match most closely. Those chunks, and only those chunks, are then read by the model that produces the recommendation.</p>
+
+      <p>This is not a flaw. It is how systems delivering the volumes and case complexities being pitched have to work. The variants vendors offer — broader enterprise integration, larger retrieval pools, hybrid approaches that re-query iteratively, fine-tuned embedding models calibrated to the domain — change the surface of the selection step. They do not eliminate it. Any system fast and cheap enough to deliver the efficiency case on complex multi-source files is, by architectural necessity, doing some form of selective surfacing rather than reading the whole file at full attention.</p>
+
+      <p>Simple-fact-pattern complaints with bounded files can plausibly be processed at full attention, and DISP exposure on those cases is correspondingly modest. The more challenging cases are the ones that turn on multi-source evidential pictures: vulnerability indicators across years of correspondence, suitability questions across multiple advice records, affordability turning on bank statements and life events scattered across several systems. Those are the cases where the tech is more likely to hit its limits. They are also the cases where regulatory exposure is highest.</p>
+
+      <h2>A worked example</h2>
+
+      <p>Consider an affordability complaint involving a customer who has fallen into financial difficulty. Part-way through the firm's relationship with the customer, a third-party authority was uploaded — a relative had been authorised to act on the customer's behalf, perhaps because of ill health or vulnerability. The authority sits in the firm's document management system, indexed by upload date and by the customer's name.</p>
+
+      <p>The AI system handling the complaint is asked to assess whether the firm acted appropriately given the customer's circumstances. It surfaces the chunks of the file whose fingerprints score highest against that question — typically the original lending decision, the customer's account history, the correspondence around the missed payments, the firm's standard process documentation. The third-party authority does not look, to the system's matching process, like a document about affordability. Its content concerns who has authority to act on the account, not the customer's financial circumstances. The system's matching process is calibrated to surface chunks that resemble the question being asked, and this document does not resemble the question. So the system does not surface it. It is in the firm's records. It is not in what the system reads.</p>
+
+      <p>The model reaches a conclusion on the chunks it has been shown. The conclusion is reasonable on the evidence in front of it. An experienced adjudicator, reviewing the same complaint with the full file open, would notice the third-party authority and immediately revise the analysis. The presence of a third-party authority is itself evidence about the customer's circumstances. It changes what counts as a fair investigation, what the firm should have noticed about vulnerability, and what duties were engaged. The adjudicator does not need to be told this; the recognition is part of the reasoning, and it requires access to the whole file to occur at all.</p>
+
+      <p>The system has not made an error in any narrow sense. It has correctly processed the inputs it was given. The error is one level up, in the scope of what it was given. The system cannot, by its architecture, recognise the absence of a document it has not been shown. A human reviewing the system's output cannot cure this without reading the full file independently. Either the firm has done the investigation, or the AI has delivered the efficiency at the speed the cost case assumes. The architecture does not allow both at once.</p>
+
+      <p>That observation describes what the technology does. The harder question is what it implies for the firm's regulatory position.</p>
+
+      <h2>DISP 1.4 and the question the FCA has not yet answered</h2>
+
+      <p>DISP 1.4.1R requires the firm to investigate complaints competently, diligently and impartially, obtaining additional information as necessary, and to assess the complaint fairly, consistently and promptly, taking into account all relevant factors. The text admits of two readings, and the difference between them is consequential for any firm deploying AI in complaints handling.</p>
+
+      <p>On a process-strict reading, the duty requires the firm to conduct a reasonably thorough search for relevant information across its records and consider all relevant factors on every complaint. A system that, by architectural design, does not consider all factors on every complaint — because the retrieval step has surfaced a sample rather than the whole file — is in breach by construction, regardless of outcome quality. The breach is in the conduct of the investigation, not in the result.</p>
+
+      <p>On an outcome-calibrated reading, the duty is about competent investigation that delivers fair assessment. "Competently" admits of a standard, and the standard is whatever produces fair outcomes at an appropriate confidence level. If an AI-assisted system produces fair outcomes at confidence levels equal to or better than the full human review it replaced — a comparison that has to be made against the human review that actually happened, with the caseloads and supervisory pressure that actually obtained — the firm has investigated competently. The architectural fact that some material was not considered on some cases is regulatorily significant only if it produces unfair outcomes that a more thorough investigation would have avoided.</p>
+
+      <p>Both readings are textually arguable, but they are not equally orthodox. A lawyer or court reading DISP 1.4.1R cold would more naturally reach for the first: the rule speaks of investigating competently, obtaining additional information as necessary, and taking into account all relevant factors — each phrase pointing at the conduct of the investigation, not at the calibration of outcomes. The second reading is more creative as a matter of legal interpretation. It is also, however, a more accurate description of what firms actually do. Large financial institutions have never, in practice, conducted on every complaint the kind of rigorous search of legacy systems that the orthodox reading would seem to require; volume complaints handling has always operated on something closer to outcome-calibration, AI or no AI. The difficulty is that this practical accommodation has never had to be defended explicitly. AI deployments make the gap between the two readings architecturally visible in a way it has not been before.</p>
+
+      <p>The FCA Handbook does not resolve the question. As things stand, no published FCA guidance does either. The Treasury Committee's January 2026 report criticised the FCA in terms for not having issued the kind of guidance that would resolve this and similar questions. The Mills Review, on its current timeline, is expected to deliver recommendations in summer 2026; it is forward-looking and will not provide ex ante clarity on systems being deployed now. The FOS's April 2026 response to Mills asked the FCA explicitly for clarity on the operational shape of exactly these questions. Senior managers carrying SMCR responsibilities for complaints functions are, in practical terms, being asked to choose between the two readings in the absence of regulatory guidance that would resolve the choice.</p>
+
+      <p>The outcome-calibrated reading also has its own design problem when applied to AI systems. Outcomes testing as a regulatory tool is well-established in UK FS, and Consumer Duty implementation has made it more so. But the cases on which an AI system is most likely to underperform are the out-of-pattern cases — cases turning on something atypical in the file, where pattern-matching gets the wrong answer. Those are also the cases an outcomes test is least likely to catch, because they are by definition rare and unlikely to be well represented in the test sample. An outcomes test that finds AI-assisted performance equivalent to human performance across a few hundred cases is providing real but limited assurance, and the assurance is weakest precisely on the cases where the firm's regulatory exposure is highest. The reading works, but only if the testing is sophisticated enough to surface tail-risk cases — and that is much harder than it sounds.</p>
+
+      <p>The senior manager carrying the prescribed responsibility cannot resolve the legal ambiguity in DISP 1.4. The senior manager can, and must, make a defensible architectural choice on the best evidence available at the time, and document the reasoning. The risk for the senior manager is that the system is subsequently found systematically to have ignored certain types of important evidence in a seam of significant but atypical complaints. What is the standard that is then to be applied to the Senior Manager's or the firm's judgement?</p>
+
+      <p>The Consumer Duty operates as an overlay rather than as the core duty. Principle 12 and PRIN 2A require firms to deliver good outcomes for retail customers and to avoid foreseeable harm. The substance of what counts as a good outcome on a complaint, and what counts as foreseeable harm in the way it is handled, is given content by DISP. The Consumer Duty raises the standard against which DISP performance is judged; it does not displace it. Article 22 of the UK GDPR adds a further constraint where complaints adjudication produces legal or similarly significant effects, requiring meaningful human review. A reviewer working at the speed required to deliver the system's promised efficiency, on the system's output rather than the full file, may not be providing review meaningful in the substantive sense Article 22 contemplates. That too is a question the firm has to be able to answer.</p>
+
+      <h2>The vendor responses worth anticipating</h2>
+
+      <p>A serious vendor will have heard versions of this analysis before. Three responses are worth anticipating directly, not to dispose of them but to understand what they do and do not establish.</p>
+
+      <p>The first is that the firm's data integration solves the problem: the system pulls from every relevant source, so a document like the third-party authority is in the retrieval pool and could be surfaced. A more sophisticated version of the same response is that the system uses metadata flagging or structured rules — documents tagged as "third-party authority" or "vulnerability indicator" are forced into the retrieval pool whenever certain types of complaint are processed, regardless of content similarity. This is a real engineering technique, and a vendor with FS experience may well have built it.</p>
+
+      <p>It is, however, a partial defence rather than a complete one. Metadata flagging only catches what has been pre-tagged. It depends on the firm having classified the document correctly when it was filed, on the tag being preserved through ingestion into the AI system, and on the vendor having built rules that prioritise that tag for the kind of complaint in front of the system. Each is a specific engineering choice that may or may not have been made, and each is fragile to the firm's existing data quality. More fundamentally, metadata flagging recognises significance through pre-configured rules rather than through reasoning over the file. The system is matching to a list of categories someone thought to write down, not weighing evidential significance in the way an adjudicator does. A complaint that turns on something the rules did not anticipate — and the cases that matter most are by definition the ones that do — is back in the original problem.</p>
+
+      <p>Beyond the metadata point, broader integration also makes the underlying selection problem harder, not easier. The more sources the system can reach into, the more material the selection step has to triage given the limited number of chunks it can pass to the model. Pulling from many different kinds of system also makes the matching problem harder — comparing a call transcript against an account ledger against a scanned letter, and ranking them on a single scale of relevance, is not something the matching process does well. The system that reaches more sources still reaches them through a step that picks chunks by resemblance to the question, not by their significance or relevance to the answer.</p>
+
+      <p>The second is that the relevance ranking is more sophisticated than embedding similarity alone — that the system uses re-ranking, hybrid retrieval, query reformulation, or other techniques that improve precision. These techniques are real and can move the selection step closer to evidential significance. They do not eliminate the structural fact that selection is happening before reasoning. A more sophisticated selection step is still a selection step.</p>
+
+      <p>The third, and most sophisticated, is that the system has been fine-tuned on domain data — closed FOS decisions, the firm's own historical complaints, sectoral guidance — and that the model has internalised the analytic frame an experienced adjudicator would bring. Domain fine-tuning genuinely improves the model's reasoning on the chunks it has been shown. It also allows the matching process to be trained specifically on the kind of analysis the firm is doing, which can move the system's sense of what counts as relevant closer to what an experienced adjudicator would treat as relevant. Both are real gains. The qualification is that fine-tuning teaches the model what a typical case looks like, and the cases that matter most for the firm's exposure are precisely the atypical ones. A model fine-tuned to reproduce typical reasoning is, on those cases, more likely to confidently apply the standard pattern to a case that does not fit it. Fine-tuning improves average performance, sometimes at the cost of worse calibration on the cases where the firm's regulatory exposure is highest. It also leaves the selection bottleneck untouched.</p>
+
+      <p>None of this means the systems are not deployable. It means the senior manager needs a clear-eyed view of what the system is and is not doing, which reading of DISP 1.4 the firm is implicitly relying on, and what evidence supports the reliance.</p>
+
+      <h2>The questions the senior manager needs to be able to answer</h2>
+
+      <p>The questions worth putting to a vendor — and to the firm's own technology and risk functions — are architectural, operational, and evidential. They are designed to surface what the system is actually doing and what evidence supports its deployment. The senior manager will need to be able to answer them, with documented reasoning, both at the point of deployment and on demand thereafter.</p>
+
+      <p>What is the system's evidential scope at the point of decision? Is the model reasoning over the full file, a structured summary of it, or a selection of chunks surfaced by a retrieval step? If the latter, what controls the scope and contents of that selection, and how is it audited? This is the threshold question; the answer determines which of the rest matter most.</p>
+
+      <p>What is the relevance criterion the selection step actually applies, and how was it calibrated? A system trained on closed FOS decisions is trained to produce something that resembles a closed FOS decision, which is not the same as being trained to identify the evidential feature that matters for the case in front of it.</p>
+
+      <p>How does the system identify out-of-pattern cases — cases where the standard analytic frame may not apply — and what happens to those cases? If the answer is that they are routed for full human investigation, the system is decision support with triage rather than a replacement adjudicator, and the efficiency case has to be recalculated on that basis. If the answer is that they are processed by the system on the same basis as typical cases, the firm's exposure on those cases needs to be specifically considered and documented.</p>
+
+      <p>What is the empirical performance picture at the file sizes and task complexity the system will encounter in production, on what evidence, and against what comparator? Vendor benchmarks against retrieval tasks in academic settings are not the same as performance against complaints adjudication at the firm's actual volumes and file complexity.</p>
+
+      <p>What outcomes testing is in place, on what sample, designed to surface what kind of underperformance? Is the testing calibrated to detect tail-risk failures — cases turning on atypical features — or is it measuring average-case performance? If the firm is, in effect, relying on an outcome-calibrated reading of DISP 1.4, the outcomes evidence is doing a lot of the regulatory work. The quality of the testing is the quality of that evidence.</p>
+
+      <p>What does the human reviewer actually do, in operational terms, on each case? Are they reading the system's output, the system's output plus the surfaced chunks, or the full file? How long does it take, and is that consistent with the throughput the cost case assumes?</p>
+
+      <p>The published vendor materials currently in market do not, on what is publicly available, answer these questions. The senior manager assessing one of these systems is being given outcome claims, value statements, and component descriptions, and is being asked to infer regulatory adequacy from the existence of human review and audit trails. That inference is not, on its own, supportable. The architectural information has to be supplied — through procurement diligence, contractual right of disclosure, internal validation, or a combination — before the senior manager can make the choice they are being asked to make.</p>
+
+      <div class="divider">* * *</div>
+
+      <p>The systems are coming, and in some firms have already arrived. The architecture of the technology and the regulatory requirement run on different logics, and the fit between them is not given. It has to be designed, assessed, and documented case by case, system by system, firm by firm.</p>
+
+      <p>The harder problem is that, in 2026, the regulatory framework has not yet resolved the central question these architectures pose. Senior managers carrying prescribed responsibilities are being asked to make choices in conditions of regulatory ambiguity, against vendor pitches that do not specify the decision pipeline, with hindsight risk if something later goes wrong. The right response to that situation is not to assume the question is settled. It is to make the choice deliberately, on documented reasoning, with the diligence that conditions of uncertainty demand.</p>
+
+      <p>Susskind's long-run prediction was that AI would come to adjudicative work. He was right, and the trajectory continues. The immediate question for UK financial services is narrower: not whether to deploy AI in complaints functions, but on what evidence, with what safeguards, and on what reading of the regulatory framework. That is not a procurement decision delegated to the technology function. It is a regulatory decision, with the senior manager's name on it.</p>
+    </article>
+  </main>
+
+  <div class="disclaimer-inline container">
+    <strong>This Insight reflects our independent perspective only and is not legal advice.</strong>
+    <a href="/insight-disclaimer.html">Full disclaimer →</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal">
+        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
+        <p>Professional indemnity insurance is maintained; details available on request.</p>
+        <p class="legal-links">
+          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+          <span class="separator">·</span>
+          <a href="/privacy.html">Privacy Notice</a>
+          <span class="separator">·</span>
+          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+  </script>
+</body>
+</html>

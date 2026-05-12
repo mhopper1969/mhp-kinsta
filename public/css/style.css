@@ -204,7 +204,30 @@ a:hover {
   max-width: 1000px;
   margin: 0 auto;
 }
+/* Footer layout: legal left, badge right */
+footer.site-footer .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+footer.site-footer .footer-legal {
+  flex: 1 1 380px;
+  min-width: 280px;
+}
+footer.site-footer .footer-badge {
+  flex: 0 0 auto;
+  width: 200px;
+}
 
+@media (max-width: 640px) {
+  footer.site-footer .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer.site-footer .footer-legal { text-align: center; }
+}
 /* Footer links */
 .site-footer a {
   color: #bbb;

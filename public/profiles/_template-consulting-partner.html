@@ -5,47 +5,7 @@
   <title>{{NAME}} – Martyn Hopper & Partners</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="{{NAME}} — {{ROLE}}. {{SHORT_TAGLINE}}" />
-  <style>
-    /* Scoped to profile pages only */
-    .prof body { background:#111; color:#eee; font-family:'Segoe UI',sans-serif; line-height:1.7; }
-    .prof a { color:#66ccff; text-decoration:none; } .prof a:hover { color:#fff; }
-    .prof .container { width:90%; max-width:1000px; margin:0 auto; padding:20px; }
-    .prof .site-header { background:#000; text-align:center; }
-    .prof .site-logo { display:block; max-width:280px; margin:15px auto; }
-    .prof nav ul { list-style:none; display:flex; justify-content:center; gap:20px; padding:0; margin:0; }
-    .prof nav a { color:#66ccff; padding:8px 16px; border-radius:4px; transition:.3s; }
-    .prof nav a:hover { color:#fff; background:rgba(102,204,255,.1); transform:translateY(-1px); }
-
-    .prof .page-title { color:#ccc; text-align:center; margin:12px 0 26px; font-weight:400; font-size:2rem; }
-
-    /* Hero block (image + summary) */
-    .prof .profile-hero { display:grid; grid-template-columns:1fr; gap:20px; background:rgba(255,255,255,.05); border-radius:12px; padding:18px; }
-    .prof .portrait-wrap { display:grid; place-items:center; }
-    .prof .portrait {
-      width:100%; max-width:360px; height:auto; border-radius:10px;
-      border:1px solid rgba(255,255,255,.12); background:#0a0a0a; display:block;
-      object-fit:cover; object-position:center;
-    }
-    .prof .bio-head { padding:8px 6px; }
-    .prof .name { margin:0 0 6px; font-size:1.75rem; color:#fff; font-weight:600; letter-spacing:.01em; }
-    .prof .role { margin:0 0 12px; color:#9ecbff; font-size:1.05rem; }
-    .prof .one-liner { margin:0; color:#ddd; }
-
-    /* Body copy */
-    .prof .bio { margin:26px 0 50px; }
-    .prof .bio h2 { font-size:1.35rem; color:#ddd; margin:0 0 10px; font-weight:600; border-bottom:2px solid rgba(102,204,255,.25); padding-bottom:6px; }
-    .prof .bio p { margin:0 0 14px; color:#eee; }
-
-    /* Back link chip */
-    .prof .back { margin:14px 0 0; display:inline-block; border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:10px 14px; background:rgba(255,255,255,.04); }
-    .prof .back:hover { background:rgba(102,204,255,.12); border-color:rgba(102,204,255,.35); }
-
-    /* Responsive two-column at desktop */
-    @media (min-width: 900px) {
-      .prof .profile-hero { grid-template-columns: 360px 1fr; align-items:start; padding:22px; gap:24px; }
-      .prof .name { font-size:2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="prof">
   <!-- Header -->
@@ -101,27 +61,44 @@
     </section>
   </main>
 
-  <!-- Footer (uses site style) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-legal">
-        <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
-        <p>Regulatory status: We provide legal and regulatory advisory services. We are not authorised by the Solicitors Regulation Authority to carry on reserved legal activities.</p>
-        <p>Professional indemnity insurance is maintained; details available on request.</p>
-        <p class="legal-links">
-          <a href="/legal.html">Legal &amp; Regulatory Notice</a>
-          <span class="separator">·</span>
-          <a href="/privacy.html">Privacy Notice</a>
-          <span class="separator">·</span>
-          <a href="/insight-disclaimer.html">Insight Disclaimer</a>
-        </p>
+      <div class="footer-inner">
+
+        <div class="footer-legal">
+          <p>© <span id="year"></span> Martyn Hopper &amp; Partners Limited. Company No. 16750161 (England &amp; Wales).</p>
+          <p>We provide legal and regulatory advisory services. We are authorised and regulated by the Solicitors Regulation Authority (“SRA”), with SRA number 8013667.</p>
+          <p>Professional indemnity insurance is maintained; details available on request.</p>
+          <p class="legal-links">
+            <a href="/legal.html">Legal &amp; Regulatory Notice</a>
+            <span class="separator">·</span>
+            <a href="/privacy.html">Privacy Notice</a>
+            <span class="separator">·</span>
+            <a href="/insight-disclaimer.html">Insight Disclaimer</a>
+          </p>
+        </div>
+
+        <div class="footer-badge">
+          <!-- Start of SRA Digital Badge code -->
+          <div style="max-width:200px;max-height:118px;">
+            <div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;">
+              <iframe frameborder="0" scrolling="no" allowTransparency="true"
+                src="https://cdn.yoshki.com/iframe/55849r.html"
+                style="border:0px; margin:0px; padding:0px; backgroundColor:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;">
+              </iframe>
+            </div>
+          </div>
+          <!-- End of SRA Digital Badge code -->
+        </div>
+
       </div>
+
+      <script>
+        (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+      </script>
     </div>
   </footer>
-
-  <script>
-    (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
-  </script>
 
   <!-- Structured data (fill only real fields) -->
   <script type="application/ld+json">

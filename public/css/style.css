@@ -1,210 +1,544 @@
+/* ==========================================================================
+   Martyn Hopper & Partners — Site stylesheet (single source of truth)
+   Sections:
+     1.  Base / reset
+     2.  Site chrome (header / nav / logo)
+     3.  Hero image
+     4.  Page title & headings
+     5.  Highlight / intro text
+     6.  CTA section + buttons
+     7.  About panels
+     8.  Services panels
+     9.  Contact page
+     10. Insights index
+     11. Insight posts
+     12. Legal / regulatory pages
+     13. Consulting-partner cards (.cpp)
+     14. Profile pages
+     15. Footer (canonical flex layout)
+     16. Insight-post body lists (chevron bullets)
+     17. Shared responsive overrides
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   1. Base / reset
+   ------------------------------------------------------------------ */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #111;
-    color: #eee;
-    margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  line-height: 1.7;
 }
+a { color: #66ccff; transition: color 0.3s ease; }
+a:hover { color: #fff; }
+.container { width: 90%; max-width: 1000px; margin: auto; padding: 20px; }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
-
-.site-header {
-    background: #000;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-img.header-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
-    object-fit: cover;
-    object-position: center;
-}
-
-h2.page-title {
-    color: #ccc;
-    text-align: center;
-    margin: 10px 0 30px;
-    font-weight: normal;
-}
+/* ------------------------------------------------------------------
+   2. Site chrome (header / nav / logo)
+   ------------------------------------------------------------------ */
+.site-header { background: #000; color: #fff; padding: 10px 0; text-align: center; }
+.site-logo   { display: block; max-width: 280px; margin: 15px auto; }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
-
 nav ul li a {
-    color: #66ccff;
-    text-decoration: none;
+  color: #66ccff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
-
 nav ul li a:hover {
-    color: #fff;
-}
-
-a {
-    color: #66ccff;
-}
-
-a:hover {
-    color: #fff;
-}
-
-.site-logo {
-    display: block;
-    max-width: 320px;
-    margin: 20px auto;
-}
-
-/* RESPONSIVE IMAGE SIZING FOR IPAD AND DESKTOP */
-/* Mobile devices - keep auto height but limit max */
-@media screen and (max-width: 767px) {
-    img.header-img {
-        height: auto;
-        max-height: 200px;
-    }
-}
-
-/* Tablet sizing (iPad and similar) - THIS FIXES YOUR IPAD ISSUE */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    img.header-img {
-        height: 250px;
-        max-height: 250px;
-    }
-}
-
-/* Desktop sizing */
-@media screen and (min-width: 1025px) and (max-width: 1399px) {
-    img.header-img {
-        height: 300px;
-        max-height: 300px;
-    }
-}
-
-/* Large desktop sizing */
-@media screen and (min-width: 1400px) {
-    img.header-img {
-        height: 350px;
-        max-height: 350px;
-    }
-}
-/* Insights Page Styling */
-.insight-post,
-.insight-preview {
-  max-width: 800px;
-  margin: 0 auto 60px auto;
-  padding: 0 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-.insight-post h2,
-.insight-preview h2 {
-  font-size: 1.8em;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #111;
-}
-.insight-preview h2 a { text-decoration: none; color: inherit; }
-.insight-preview h2 a:hover { color: #005f73; }
-
-.post-meta { font-size: 0.9em; color: #666; margin-bottom: 20px; }
-
-.insight-post ul,
-.insight-preview ul { margin: 15px 0 20px 20px; padding: 0; }
-.insight-post li,
-.insight-preview li { margin-bottom: 8px; }
-
-.read-more { font-weight: 600; color: #005f73; text-decoration: none; }
-.read-more:hover { text-decoration: underline; }
-
-.post-tags { margin-top: 30px; font-size: 0.85em; color: #555; }
-.post-tags span { display: inline-block; margin-right: 10px; color: #005f73; }
-/* Shared meta styling (author bold on first line, date smaller beneath) */
-.article-meta,
-.byline {
-  margin-top: 10px;
-  line-height: 1.35;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.article-author,
-.byline .author {
-  display: block;
-  font-weight: 700;           /* bold */
-  font-size: 1rem;            /* base size */
-  color: #eee;                /* works on dark theme */
-}
-
-.article-date,
-.byline .date {
-  display: block;
-  margin-top: 2px;
-  font-size: 0.85rem;         /* smaller */
-  color: #aaa;                /* lighter tone */
-}
-
-/* Optional: tidy summary cards on dark theme */
-.insight-card {
-  background: #121212;
-  border: 1px solid #1f1f1f;
-  border-radius: 8px;
-  padding: 16px 18px;
-  margin: 16px 0;
-}
-
-.insight-card .article-title {
-  margin: 0 0 6px 0;
-  font-size: 1.15rem;
   color: #fff;
+  background: rgba(102, 204, 255, 0.1);
+  transform: translateY(-1px);
+}
+nav ul li a.current {
+  color: #fff;
+  background: rgba(102, 204, 255, 0.2);
 }
 
-.insight-card .article-summary {
-  margin: 8px 0 10px 0;
-  color: #cfcfcf;
+/* ------------------------------------------------------------------
+   3. Hero image
+   ------------------------------------------------------------------ */
+.header-img {
+  width: 100%;
+  height: 320px;
+  display: block;
+  margin-bottom: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+/* Home page hero is taller with a lower focal point */
+.header-img.home-hero {
+  height: 420px;
+  object-position: center 70%;
 }
 
-/* Small screens: tighten spacing slightly */
-@media (max-width: 600px) {
-  .insight-card { padding: 14px 16px; }
-  .insight-card .article-title { font-size: 1.05rem; }
+/* ------------------------------------------------------------------
+   4. Page title & headings
+   ------------------------------------------------------------------ */
+.page-title {
+  color: #ccc;
+  text-align: center;
+  margin: 10px 0 30px;
+  font-weight: normal;
+  font-size: 2.2rem;
 }
-/* === Small Print & Legal Pages (Martyn Hopper & Partners) === */
+h1 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600; }
+h2 { font-size: 2.2rem; color: #ddd; margin: 2.5rem 0 1.5rem 0; font-weight: 500; }
+h3 { font-size: 1.6rem; color: #ccc; margin: 2rem 0 1rem 0; font-weight: 500; }
+h4 { font-size: 1.3rem; color: #66ccff; margin: 1.5rem 0 0.8rem 0; font-weight: 600; }
+p  { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: #eee; }
 
-/* === Small Print & Legal Pages (Martyn Hopper & Partners) === */
+/* Article-style h3 with underline (panels on About / Services / Insight posts) */
+.values-section h3,
+.differentiators-section h3,
+.intro-section h3,
+.who-we-help h3,
+.service-item h3,
+main.container > h3 {
+  border-bottom: 2px solid rgba(102, 204, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
 
-/* Footer container */
-.site-footer {
+/* ------------------------------------------------------------------
+   5. Highlight / intro text
+   ------------------------------------------------------------------ */
+.highlight   { color: #66ccff; font-weight: 500; }
+.intro-text  { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; }
+
+/* ------------------------------------------------------------------
+   6. CTA section + buttons
+   ------------------------------------------------------------------ */
+.cta-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+  text-align: center;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #66ccff, #4da6e6);
+  color: #000;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 204, 255, 0.2);
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 204, 255, 0.3);
+  color: #000;
+}
+.cta-button.secondary {
+  background: transparent;
+  color: #66ccff;
+  border: 2px solid #66ccff;
+}
+.cta-button.secondary:hover { background: #66ccff; color: #000; }
+
+/* Full-width centred button variant (Contact page) */
+.cta-button.block {
+  display: block;
+  max-width: 200px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   7. About panels
+   ------------------------------------------------------------------ */
+.values-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid rgba(102, 204, 255, 0.6);
+}
+.differentiators-section {
+  background: rgba(102, 204, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #66ccff;
+}
+
+/* Bullet styling — scoped to About / Services panels, not nav */
+.values-section ul,
+.differentiators-section ul,
+.intro-section ul,
+.service-item ul,
+.who-we-help ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.values-section li,
+.differentiators-section li,
+.intro-section li,
+.service-item li,
+.who-we-help li {
+  margin: 0.6rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.values-section li::before,
+.differentiators-section li::before,
+.intro-section li::before,
+.service-item li::before,
+.who-we-help li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #66ccff;
+}
+.values-section li strong,
+.differentiators-section li strong {
+  color: #66ccff;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------
+   8. Services panels
+   ------------------------------------------------------------------ */
+.intro-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+.who-we-help {
+  background: rgba(102, 204, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #66ccff;
+}
+.service-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border-left: 3px solid #66ccff;
+  transition: all 0.3s ease;
+}
+.service-item:hover { background: rgba(255, 255, 255, 0.08); transform: translateX(5px); }
+
+/* ------------------------------------------------------------------
+   9. Contact page
+   ------------------------------------------------------------------ */
+.contact-intro    { font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem; }
+.contact-methods  {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.contact-item:last-child { border-bottom: none; }
+.contact-icon  { width: 24px; height: 24px; margin-right: 12px; opacity: 0.8; }
+.contact-label { font-weight: 600; color: #ccc; min-width: 80px; margin-right: 12px; }
+.contact-value { color: #eee; }
+.contact-value a         { color: #66ccff; text-decoration: none; font-weight: 500; }
+.contact-value a:hover   { color: #fff; text-decoration: underline; }
+.primary-contact {
+  background: rgba(102, 204, 255, 0.1);
+  border-left: 3px solid #66ccff;
+  padding-left: 1rem;
+}
+.contact-note {
+  text-align: center;
+  font-style: italic;
+  color: #bbb;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------
+   10. Insights index
+   ------------------------------------------------------------------ */
+.insight-preview {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #66ccff;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.insight-preview:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-2px); }
+.insight-preview img   { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; }
+.insight-preview h3    { font-size: 1.5rem; color: #fff; margin-bottom: 0.75rem; border: 0; padding-bottom: 0; }
+.insight-preview p     { font-size: 1.05rem; color: #ddd; margin-bottom: 1rem; }
+
+.read-more,
+.insight-preview a.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #66ccff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.read-more:hover,
+.insight-preview a.read-more:hover { color: #fff; }
+
+.article-meta { font-size: 0.95rem; color: #bbb; margin-bottom: 0.75rem; }
+
+.topics-section {
+  background: rgba(102, 204, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #66ccff;
+}
+.coming-soon {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid rgba(102, 204, 255, 0.2);
+  text-align: center;
+}
+.newsletter-signup {
+  background: linear-gradient(135deg, rgba(102, 204, 255, 0.1), rgba(102, 204, 255, 0.05));
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid rgba(102, 204, 255, 0.2);
+  text-align: center;
+  margin: 2rem 0;
+}
+.newsletter-signup h4 { color: #66ccff; margin-bottom: 1rem; font-size: 1.3rem; }
+
+/* ------------------------------------------------------------------
+   11. Insight posts
+   ------------------------------------------------------------------ */
+.byline       { color: #aaa; font-size: 0.95rem; margin: -12px 0 22px; text-align: center; }
+.byline .author { color: #ddd; }
+.byline .date   { color: #9aa0a6; margin-left: 0.6rem; }
+
+.lede {
+  font-style: italic;
+  color: #ddd;
+  border-left: 3px solid #66ccff;
+  padding: 0.5rem 1rem;
+  background: rgba(102, 204, 255, 0.04);
+}
+.divider { text-align: center; color: #888; letter-spacing: 0.6em; margin: 2.5rem 0; }
+
+.disclaimer-inline {
+  color: #aaa;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 1.2rem 0 1.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.disclaimer-inline a {
+  color: #bbb;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(187, 187, 187, 0.3);
+}
+.disclaimer-inline a:hover { color: #eee; border-bottom-color: rgba(238, 238, 238, 0.7); }
+
+/* ------------------------------------------------------------------
+   12. Legal / regulatory pages
+   ------------------------------------------------------------------ */
+.legal-page {
+  background: #111;
+  color: #eee;
+  padding: 24px 0 60px;
+}
+.legal-page h1 { color: #ccc; font-weight: 400; font-size: 2rem;   margin: 0 0 1rem; }
+.legal-page h2 { color: #ccc; font-weight: 400; font-size: 1.2rem; margin: 2rem 0 0.6rem; }
+.legal-page p,
+.legal-page li { color: #ddd; }
+.legal-page ul { margin: 0.6rem 0 1rem 1.1rem; }
+.legal-updated { color: #888; font-size: 0.85rem; margin-top: 1.2rem; }
+
+/* ------------------------------------------------------------------
+   13. Consulting-partner cards (.cpp)
+   Used on team.html and profile templates
+   ------------------------------------------------------------------ */
+.cpp {
+  background: #0b0c0e;
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid #1c1f24;
+}
+.cpp__inner   { width: 100%; max-width: 1000px; margin: 0 auto; }
+.cpp__header  { margin-bottom: 1rem; }
+.cpp__title   { color: #e8e9ea; font-weight: 600; letter-spacing: 0.02em; font-size: 1.5rem; margin: 0; }
+.cpp__lede    { color: #9aa0a6; margin: 0.5rem 0 0; max-width: 60ch; }
+
+.cpp__grid {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+.cpp__item { grid-column: span 12; }
+@media (min-width: 640px) { .cpp__item { grid-column: span 6; } }
+@media (min-width: 960px) { .cpp__item { grid-column: span 4; } }
+
+.cpp__card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  background: #101215;
+  border: 1px solid #1c1f24;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.cpp__card:focus-visible { outline: 2px solid #b08d57; outline-offset: 2px; }
+.cpp__card:hover         { transform: translateY(-2px); border-color: #2a2e35; }
+
+.cpp__media {
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  background: #0a0a0a;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #1c1f24;
+  width: 100%;
+}
+.cpp__img      { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.cpp__body     { padding: 0.95rem 1rem 1rem; }
+.cpp__name     { color: #e8e9ea; font-size: 1.06rem; font-weight: 700; margin: 0 0 0.35rem; letter-spacing: 0.01em; }
+.cpp__oneLiner { color: #9aa0a6; font-size: 0.95rem; line-height: 1.35; margin: 0; }
+.cpp__blurb    { color: #cfd1d4; font-size: 1.02rem; line-height: 1.55; margin: 0.25rem 0 0; }
+
+.cpp__cta {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #1c1f24;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.cpp__icon                   { width: 18px; height: 18px; color: #9aa0a6; transition: color 0.25s ease; }
+.cpp__card:hover .cpp__cta   {
+  background: rgba(176, 141, 87, 0.08);
+  border-color: #2a2e35;
+  transform: translateY(-1px);
+}
+.cpp__card:hover .cpp__icon  { color: #e8e9ea; }
+
+/* ------------------------------------------------------------------
+   14. Profile pages
+   ------------------------------------------------------------------ */
+.profile-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 18px;
+}
+.portrait-wrap { display: grid; place-items: center; }
+.portrait {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0a0a0a;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.bio-head  { padding: 8px 6px; }
+.name      { margin: 0 0 6px;  font-size: 1.75rem; color: #fff;    font-weight: 600; letter-spacing: 0.01em; }
+.role      { margin: 0 0 12px; color: #9ecbff; font-size: 1.05rem; }
+.one-liner { margin: 0; color: #ddd; }
+
+.bio   { margin: 26px 0 50px; }
+.bio h2 {
+  font-size: 1.35rem;
+  color: #ddd;
+  margin: 0 0 10px;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(102, 204, 255, 0.25);
+  padding-bottom: 6px;
+}
+.bio p { margin: 0 0 14px; color: #eee; }
+
+.back {
+  margin: 14px 0 0;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.back:hover { background: rgba(102, 204, 255, 0.12); border-color: rgba(102, 204, 255, 0.35); }
+
+@media (min-width: 900px) {
+  .profile-hero { grid-template-columns: 360px 1fr; align-items: start; padding: 22px; gap: 24px; }
+  .name         { font-size: 2rem; }
+}
+
+/* ------------------------------------------------------------------
+   15. Footer (canonical flex layout)
+   ------------------------------------------------------------------ */
+footer.site-footer {
   background: #000;
   color: #aaa;
   border-top: 1px solid #222;
   padding: 20px 0 24px;
-  font-size: 0.72rem;     /* ~11.5px */
+  font-size: 0.72rem;
   line-height: 1.35;
-  opacity: 0.85;          /* subtle */
+  opacity: 0.85;
 }
-.site-footer:hover {
-  opacity: 1;
-}
+footer.site-footer:hover { opacity: 1; }
+footer.site-footer *     { font-size: inherit; }
 
-/* Ensure alignment with your existing .container */
-.site-footer .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+footer.site-footer a {
+  color: #bbb;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(187, 187, 187, 0.3);
 }
-/* Footer layout: legal left, badge right */
+footer.site-footer a:hover { color: #eee; border-bottom-color: rgba(238, 238, 238, 0.7); }
+
+footer.site-footer .footer-legal p  { margin: 0.3rem 0; }
+footer.site-footer .legal-links     { margin-top: 0.3rem; }
+footer.site-footer .separator       { color: #555; margin: 0 0.5rem; }
+
 footer.site-footer .footer-inner {
   display: flex;
   justify-content: space-between;
@@ -212,127 +546,64 @@ footer.site-footer .footer-inner {
   gap: 32px;
   flex-wrap: wrap;
 }
-footer.site-footer .footer-legal {
-  flex: 1 1 380px;
-  min-width: 280px;
-}
-footer.site-footer .footer-badge {
-  flex: 0 0 auto;
-  width: 200px;
-}
+footer.site-footer .footer-legal { flex: 1 1 380px; min-width: 280px; }
+footer.site-footer .footer-badge { flex: 0 0 auto; width: 200px; }
 
 @media (max-width: 640px) {
-  footer.site-footer .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
+  footer.site-footer .footer-inner { flex-direction: column; text-align: center; }
   footer.site-footer .footer-legal { text-align: center; }
 }
-/* Footer links */
-.site-footer a {
-  color: #bbb;
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(187, 187, 187, 0.3);
+
+/* ------------------------------------------------------------------
+   16. Insight-post body lists (chevron bullets)
+   Scoped to direct-child <ul> of <main.container> so page-section
+   ULs (.values-section ul, etc.) keep their own bullet styling.
+   ------------------------------------------------------------------ */
+main.container > ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
 }
-.site-footer a:hover,
-.site-footer a:focus {
-  color: #eee;
-  border-bottom-color: rgba(238, 238, 238, 0.7);
+main.container > ul > li {
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  position: relative;
+}
+main.container > ul > li::before {
+  content: '\25B8';
+  color: #66ccff;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
-/* Make the legal lines subtle and well spaced */
-.footer-legal p {
-  margin: 0.3rem 0;
+/* ------------------------------------------------------------------
+   17. Shared responsive overrides
+   ------------------------------------------------------------------ */
+@media screen and (max-width: 768px) {
+  h1            { font-size: 2rem; }
+  h2            { font-size: 1.8rem; }
+  h3            { font-size: 1.4rem; }
+  h4            { font-size: 1.2rem; }
+  p             { font-size: 1.05rem; }
+  .page-title   { font-size: 1.8rem; }
+  .cta-buttons  { flex-direction: column; align-items: center; }
+  .cta-button   { width: 100%; max-width: 250px; }
+  .values-section,
+  .differentiators-section,
+  .cta-section,
+  .intro-section,
+  .who-we-help,
+  .service-item,
+  .topics-section,
+  .coming-soon,
+  .newsletter-signup { padding: 1.5rem; }
+  .contact-item     { flex-direction: column; align-items: flex-start; padding: 1rem 0; }
+  .contact-label    { margin-bottom: 0.5rem; }
+  .contact-methods  { padding: 1.5rem; }
 }
 
-/* Keep nested elements from inflating the size */
-.site-footer * { font-size: inherit; }
-
-/* Inline list for footer links */
-.legal-links {
-  margin-top: 0.3rem;
-}
-.legal-links a + span.separator {
-  margin: 0 0.5rem;
-  color: #555;
-}
-
-/* Legal pages */
-.legal-page {
-  background: #111;
-  color: #eee;
-  padding: 24px 0 60px;
-}
-.legal-page .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.legal-page h1 {
-  color: #ccc;
-  font-weight: 400;
-  font-size: 2rem;
-  margin: 0 0 1rem;
-}
-.legal-page h2 {
-  color: #ccc;
-  font-weight: 400;
-  font-size: 1.2rem;
-  margin: 2rem 0 0.6rem;
-}
-.legal-page p,
-.legal-page li { color: #ddd; }
-.legal-page ul { margin: 0.6rem 0 1rem 1.1rem; }
-.legal-updated {
-  color: #888;
-  font-size: 0.8rem;
-  margin-top: 1.2rem;
-}
-
-/* Inline one-liner disclaimer (for Insight posts) */
-.disclaimer-inline {
-  color: #aaa;
-  font-size: 0.8rem;
-  line-height: 1.45;
-  margin: 0.6rem 0 1.2rem;
-}
-
-/* Responsive tweaks: keep footer small on mobile too */
 @media (max-width: 600px) {
-  .site-footer { font-size: 0.72rem; }  /* do NOT bump to 0.9rem */
   .legal-page h1 { font-size: 1.6rem; }
   .legal-page h2 { font-size: 1.05rem; }
 }
-/* ===== Consulting Partner Panel (scoped) ===== */
-.cpp { background:#0b0c0e; padding: 2rem 0 2.5rem; border-top:1px solid #1c1f24; }
-.container .cpp__inner { width:100%; max-width:1000px; margin:0 auto; }
-
-.cpp__header { margin-bottom:1rem; }
-.cpp__title { color:#e8e9ea; font-weight:600; letter-spacing:.02em; font-size:1.5rem; margin:0; }
-.cpp__lede { color:#9aa0a6; margin:.5rem 0 0; max-width:60ch; }
-
-/* Grid */
-.cpp__grid { list-style:none; padding:0; margin:1rem 0 0; display:grid; gap:1rem; grid-template-columns:repeat(12,1fr); }
-.cpp__item { grid-column: span 12; }
-@media (min-width:640px){ .cpp__item { grid-column: span 6; } }   /* 2-up */
-@media (min-width:960px){ .cpp__item { grid-column: span 4; } }   /* 3-up */
-
-/* Card */
-.cpp__card { position:relative; display:grid; grid-template-rows:auto auto; background:#101215; border:1px solid #1c1f24; border-radius:16px; overflow:hidden; text-decoration:none; transition:transform .25s ease, border-color .25s ease; }
-.cpp__card:focus-visible { outline:2px solid #b08d57; outline-offset:2px; }
-.cpp__card:hover { transform: translateY(-2px); border-color:#2a2e35; }
-
-/* Media */
-.cpp__media { aspect-ratio:1/1; margin:0; background:#0a0a0a; display:grid; place-items:center; border-bottom:1px solid #1c1f24; }
-.cpp__img { width:100%; height:100%; object-fit:cover; object-position:50% 40%; display:block; }
-
-/* Body */
-.cpp__body { padding:.9rem 1rem 1rem; }
-.cpp__name { color:#e8e9ea; font-size:1rem; font-weight:600; margin:0 0 .25rem; letter-spacing:.01em; }
-.cpp__oneLiner { color:#9aa0a6; font-size:.95rem; line-height:1.35; margin:0; }
-
-/* CTA */
-.cpp__cta { position:absolute; right:10px; bottom:10px; display:inline-grid; place-items:center; width:36px; height:36px; border-radius:50%; background:transparent; border:1px solid #1c1f24; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
-.cpp__icon { width:18px; height:18px; color:#9aa0a6; transition:color .25s ease; }
-.cpp__card:hover .cpp__cta { background:rgba(176,141,87,.08); border-color:#2a2e35; transform: translateY(-1px); }
-.cpp__card:hover .cpp__icon { color:#e8e9ea; }

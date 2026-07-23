@@ -1,0 +1,69 @@
+name: BoE Real Yield Monitor
+
+# Runs the long-dated real yield monitor daily at 09:30 UK local time.
+#
+# GitHub Actions cron is UTC-only, so we schedule at BOTH 08:30 UTC and
+# 09:30 UTC and use a first-step guard to only continue when it's 09:30
+# in Europe/London. That way we hit 09:30 UK year-round across BST/GMT.
+#
+# Manual runs via workflow_dispatch always run (guard is skipped).
+
+on:
+  schedule:
+    - cron: '30 8 * * *'   # 09:30 London during BST (British Summer Time)
+    - cron: '30 9 * * *'   # 09:30 London during GMT (winter)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Fetch and parse only; do not send email'
+        type: boolean
+        default: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check it is 09:00 in London (skip other cron firing)
+        id: guard
+        run: |
+          uk_hour=$(TZ='Europe/London' date +%H)
+          uk_time=$(TZ='Europe/London' date +'%Y-%m-%d %H:%M %Z')
+          echo "London time is $uk_time"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch - running."
+            echo "run=1" >> "$GITHUB_OUTPUT"
+          elif [ "$uk_hour" = "09" ]; then
+            echo "run=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not the 09:xx London window - skipping."
+            echo "run=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.run == '1'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.guard.outputs.run == '1'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: steps.guard.outputs.run == '1'
+        run: pip install --no-cache-dir requests openpyxl
+
+      - name: Run real yield monitor
+        if: steps.guard.outputs.run == '1'
+        env:
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: '465'
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_TO:  ${{ secrets.EMAIL_TO }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python scripts/real_yield_monitor.py --dry-run
+          else
+            python scripts/real_yield_monitor.py
+          fi

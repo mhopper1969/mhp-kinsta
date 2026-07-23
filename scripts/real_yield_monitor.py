@@ -96,23 +96,36 @@ def fetch_real_curve():
 
     # Layout (long-standing BoE format): a header row containing maturities
     # (0.5, 1, 1.5, ... years) a few rows down; dates in column A below it.
+    # The maturity header is the row whose numeric cells (a) form a strictly
+    # increasing sequence and (b) start near 0.5 - 1 year. Just counting
+    # numerics can falsely match the first data row (yields are also numeric).
     rows = list(sheet.iter_rows(values_only=True))
 
+    def looks_like_maturity_row(row):
+        nums = [c for c in row[1:] if isinstance(c, (int, float))]
+        if len(nums) < 10:
+            return False
+        if not (0 < nums[0] <= 1.5):
+            return False
+        return all(b > a for a, b in zip(nums, nums[1:]))
+
     header_idx, maturities = None, None
-    for i, row in enumerate(rows[:10]):
-        numeric = [c for c in row[1:] if isinstance(c, (int, float))]
-        if len(numeric) > 10:  # looks like the maturity header
+    for i, row in enumerate(rows[:15]):
+        if looks_like_maturity_row(row):
             header_idx = i
             maturities = row
             break
     if header_idx is None:
         raise RuntimeError("Could not locate maturity header row in BoE workbook")
 
-    # last row with a date in column A = latest observation
+    # last row with a date in column A AND numeric yields = latest observation
     latest = None
     for row in rows[header_idx + 1:]:
-        if row[0] is not None:
-            latest = row
+        if row[0] is None:
+            continue
+        if not any(isinstance(c, (int, float)) for c in row[1:]):
+            continue
+        latest = row
     if latest is None:
         raise RuntimeError("No data rows found")
 
@@ -123,6 +136,11 @@ def fetch_real_curve():
             val = latest[col]
             if isinstance(val, (int, float)):
                 curve[int(mat)] = float(val)
+    if "--debug" in sys.argv:
+        int_mats = sorted(k for k in curve.keys())
+        print(f"[debug] sheet={sheet.title!r} header_row={header_idx} "
+              f"max_maturity={max(int_mats) if int_mats else 'none'} "
+              f"integer_maturities={int_mats}")
     return as_of, curve
 
 

@@ -63,7 +63,7 @@ jobs:
           EMAIL_TO:  ${{ secrets.EMAIL_TO }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python scripts/real_yield_monitor.py --dry-run
+            python scripts/real_yield_monitor.py --dry-run --debug
           else
             python scripts/real_yield_monitor.py
           fi

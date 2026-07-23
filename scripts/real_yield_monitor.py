@@ -85,14 +85,14 @@ def fetch_real_curve():
 
     wb = openpyxl.load_workbook(io.BytesIO(zf.read(name)), data_only=True)
 
-    # find the spot-curve sheet
-    sheet = None
-    for s in wb.sheetnames:
-        if "spot" in s.lower():
-            sheet = wb[s]
-            break
-    if sheet is None:
-        sheet = wb[wb.sheetnames[0]]
+    # Find the spot-curve sheet. The workbook has several "spot" sheets:
+    # e.g. "3. spot, short end" (caps ~5y), "4. spot curve" (long end).
+    # Prefer sheets that aren't short-end; among those, prefer "curve".
+    spot_sheets = [s for s in wb.sheetnames if "spot" in s.lower()]
+    long_end = [s for s in spot_sheets if "short" not in s.lower()]
+    candidates = long_end or spot_sheets or list(wb.sheetnames)
+    candidates.sort(key=lambda s: (0 if "curve" in s.lower() else 1, s))
+    sheet = wb[candidates[0]]
 
     # Layout (long-standing BoE format): a header row containing maturities
     # (0.5, 1, 1.5, ... years) a few rows down; dates in column A below it.

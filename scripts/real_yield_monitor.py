@@ -85,38 +85,45 @@ def fetch_real_curve():
 
     wb = openpyxl.load_workbook(io.BytesIO(zf.read(name)), data_only=True)
 
-    # Find the spot-curve sheet. The workbook has several "spot" sheets:
-    # e.g. "3. spot, short end" (caps ~5y), "4. spot curve" (long end).
-    # Prefer sheets that aren't short-end; among those, prefer "curve".
-    spot_sheets = [s for s in wb.sheetnames if "spot" in s.lower()]
-    long_end = [s for s in spot_sheets if "short" not in s.lower()]
-    candidates = long_end or spot_sheets or list(wb.sheetnames)
-    candidates.sort(key=lambda s: (0 if "curve" in s.lower() else 1, s))
-    sheet = wb[candidates[0]]
-
     # Layout (long-standing BoE format): a header row containing maturities
-    # (0.5, 1, 1.5, ... years) a few rows down; dates in column A below it.
-    # The maturity header is the row whose numeric cells (a) form a strictly
-    # increasing sequence and (b) start near 0.5 - 1 year. Just counting
-    # numerics can falsely match the first data row (yields are also numeric).
-    rows = list(sheet.iter_rows(values_only=True))
-
+    # (in years) a few rows down; dates in column A below it. The workbook
+    # has several "spot" sheets (short-end starts near 0.5y, long-end near
+    # 5y), so look across every sheet whose name contains "spot" and pick
+    # the one whose maturity row extends farthest - that's the sheet with
+    # 20/25/... in it. Fall back to any sheet if no "spot" name matches.
     def looks_like_maturity_row(row):
         nums = [c for c in row[1:] if isinstance(c, (int, float))]
-        if len(nums) < 10:
+        if len(nums) < 8:
             return False
-        if not (0 < nums[0] <= 1.5):
+        if not (0 < nums[0] <= 6):
             return False
         return all(b > a for a, b in zip(nums, nums[1:]))
 
-    header_idx, maturities = None, None
-    for i, row in enumerate(rows[:15]):
-        if looks_like_maturity_row(row):
-            header_idx = i
-            maturities = row
-            break
-    if header_idx is None:
-        raise RuntimeError("Could not locate maturity header row in BoE workbook")
+    def find_maturity_row(rows):
+        for i, row in enumerate(rows[:30]):
+            if looks_like_maturity_row(row):
+                return i, row
+        return None, None
+
+    candidate_names = [s for s in wb.sheetnames if "spot" in s.lower()] or list(wb.sheetnames)
+
+    best = None  # (max_maturity, sheet_name, header_idx, maturities, rows)
+    for name in candidate_names:
+        sh = wb[name]
+        rs = list(sh.iter_rows(values_only=True))
+        idx, mats = find_maturity_row(rs)
+        if idx is None:
+            continue
+        max_mat = max((m for m in mats if isinstance(m, (int, float))), default=0)
+        if best is None or max_mat > best[0]:
+            best = (max_mat, name, idx, mats, rs)
+    if best is None:
+        raise RuntimeError(
+            f"Could not locate maturity header row in any sheet. "
+            f"Sheets tried: {candidate_names}"
+        )
+    _, sheet_name, header_idx, maturities, rows = best
+    sheet = wb[sheet_name]
 
     # last row with a date in column A AND numeric yields = latest observation
     latest = None
